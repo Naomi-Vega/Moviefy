@@ -5,7 +5,7 @@ body {
 .header {
   margin: 0;
   height: 80px;
-  background: #353f7ac9;
+  background: #353f7ada;
   display: flex;
   justify-content: space-between;
 }
@@ -22,7 +22,7 @@ body {
   box-sizing: border-box;
 }
 
-button:hover {
+.sign-in:hover {
   background-position: 100% 0;
   -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
@@ -30,11 +30,11 @@ button:hover {
   transition: all .4s ease-in-out;
 }
 
-button:focus {
+.sign-in:focus {
   outline: none;
 }
 
-button {
+.sign-in {
   width: 150px;
   font-size: 16px;
   font-weight: 600;

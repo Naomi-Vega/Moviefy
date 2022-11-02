@@ -1,34 +1,30 @@
 import React from "react";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 import Header from "./header/header";
-
+import "../components/LandingPage.css"
+import home from "./images/home-img.jpg"
 
 /* import { useState } from "react"
 import { useNavigate } from "react-router-dom"; */
 
 function LandingPage() {
-/*     const [userName, setUserName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const navigate = useNavigate() */
+    /*     const [userName, setUserName] = useState("")
+        const [email, setEmail] = useState("")
+        const [password, setPassword] = useState("")
+        const navigate = useNavigate() */
 
     return (
         <>
-        <Header />
-            <div>
-                
-
+            <Header />
+            <div className="landing-container">
                 <div className="home-page-left">
-                    <h1>Welcome to <strong>Moviefy</strong></h1>
+                    <h1>Welcome to Moviefy</h1>
                     <h2>Your favorite movie tracker</h2>
-                    <img className="home-img" />
+                    <img className="home-img" src={home} alt="Home" />
                 </div>
                 <div className="home-page-right">
-                    <div className="Register">
-                        <h1>Register</h1>
-                        <p>
-                            To begin your Moviefy experience
-                        </p>
+                    <div className="register">
+                        <p><strong>Register now!</strong> To begin your Moviefy experience</p>
                     </div>
                     <form className="login-section" /* onSubmit={(e) => {
                     e.preventDefault()
@@ -59,14 +55,11 @@ function LandingPage() {
                         <label for="confirm-password"><p><FaLock /> Confirm Password</p></label>
                         <input type="password" name="confirm-pword" required />
                         <div className='login-bottom'>
-                            <button type="submit">Submit</button>
+                            <button className="submit" type="submit">Submit</button>
 
-                            <h3>By clicking the Submit button, you agree to our <a href='https://ciccc.ca/policy/prior-learning-assessment-policy/'>Terms & Conditions</a> and <a href='https://ciccc.ca/policy/admission-policy/'>Privacy Policy</a></h3>
+                            <h4>By clicking the Submit button, you agree to our <a href='https://ciccc.ca/policy/prior-learning-assessment-policy/'>Terms & Conditions</a> and <a href='https://ciccc.ca/policy/admission-policy/'>Privacy Policy</a></h4>
                         </div>
                     </form>
-                </div>
-                <div className='footer'>
-                    <h4>Already have an account?<a href='#'> Login Here</a></h4>
                 </div>
             </div>
         </>
