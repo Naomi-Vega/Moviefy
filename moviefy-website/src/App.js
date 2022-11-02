@@ -1,10 +1,10 @@
 import './App.css';
-import LandingPage from './components/LandingPage';
+import ExplorePage from './components/ExplorePage';
 
 function App() {
   return (
     <div>
-      <LandingPage />
+      <ExplorePage />
     </div>
   );
 }

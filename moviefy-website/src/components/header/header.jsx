@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/logo-test.png";
+import logo from "../images/moviefy-01.png";
 import "../header/StyleHeader.css"
 
 function Header() {
