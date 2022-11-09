@@ -1,0 +1,22 @@
+body {
+    background-color: rgba(128, 128, 128, 0.603);
+    font-family: 'Comfortaa', cursive;
+}
+
+img {
+    height: 20rem;
+}
+
+.movie-container {
+    margin: 20px 20px 20px 20px;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(241, 241, 241);
+    width: 17rem;
+    
+    
+}
+
+.explore-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
