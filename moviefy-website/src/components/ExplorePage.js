@@ -4,8 +4,10 @@ import Movie from "./Movie";
 import "../components/ExplorePage.css";
 import SearchBox from "./SearchBox";
 
+
 const ExplorePage = () => {
     const [movies, setMovies] = useState([]);
+    const [favourites, setFavourites] = useState([]);
     const [searchValue, setSearchValue] = useState('');
 
 
