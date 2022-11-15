@@ -1,9 +1,29 @@
+import axios from 'axios';
+import { useEffect } from 'react';
 import './App.css';
+import { useAppContext } from './AppContext';
 import ExplorePage from './components/ExplorePage';
+import LandingPage from './components/LandingPage';
 
 function App() {
+  const contextData = useAppContext()
+
+  const getCurrentUser = async () => {
+    const res = await axios.get("http://localhost:5000/currentUser", {
+      headers:{
+        Authorization:localStorage.getItem("token")
+      }
+    })
+    contextData.setUser(res.data)
+  }
+
+  useEffect (() => {
+    getCurrentUser()
+  }, [])
+
   return (
     <div>
+      <LandingPage />
       <ExplorePage />
     </div>
   );

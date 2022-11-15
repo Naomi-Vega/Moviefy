@@ -3,6 +3,7 @@ import Header from "./header/header";
 import Movie from "./Movie";
 import "../components/ExplorePage.css";
 import SearchBox from "./SearchBox";
+import HeaderLoggedIn from "./header/headerLoggedIn";
 
 const ExplorePage = () => {
     const [movies, setMovies] = useState([]);
@@ -29,7 +30,7 @@ useEffect(() => {
     
     return (
         <>
-            <Header />
+            <HeaderLoggedIn />
 
             <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
 

@@ -3,15 +3,17 @@ import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 import Header from "./header/header";
 import "../components/LandingPage.css"
 import home from "./images/home-img.jpg"
-
-/* import { useState } from "react"
-import { useNavigate } from "react-router-dom"; */
+import axios from "axios"
+import { useState } from "react"
+import { useAppContext } from "../AppContext";
+/* import { useNavigate } from "react-router-dom"; */
 
 function LandingPage() {
-    /*     const [userName, setUserName] = useState("")
+        const [name, setName] = useState("")
         const [email, setEmail] = useState("")
         const [password, setPassword] = useState("")
-        const navigate = useNavigate() */
+        const contextData = useAppContext()
+     /*    const navigate = useNavigate() */
 
     return (
         <>
@@ -26,31 +28,30 @@ function LandingPage() {
                     <div className="register">
                         <p><strong>Register now!</strong> To begin your Moviefy experience</p>
                     </div>
-                    <form className="login-section" /* onSubmit={(e) => {
+                    <form className="login-section" onSubmit={async (e) => {
                     e.preventDefault()
                     var user = {
-                        firstName, lastName, email, password
+                        name, email, password
                     }
-                    let users = localStorage.getItem("users")
-                    users = JSON.parse(users)
-                    users.push(user)
-                    localStorage.setItem("users", JSON.stringify(users))
-                    navigate("/users")
-                }} */>
+                    const res = await axios.post ("http://localhost:5000/register", user)
+                    console.log(res.data)
+                    localStorage.setItem("token", res.data.token)
+                    contextData.setUser(res.data.user)
+                }}>
                         <label for="user-name"><p><FaUserAlt /> Name</p></label>
-                        <input type="text" name="username" /* value={userName} onChange={(e) => {
-                            setFirstName(e.target.value)
-                        }} */ required />
+                        <input type="text" name="username" value={name} onChange={(e) => {
+                            setName(e.target.value)
+                        }} required />
 
                         <label for="email"><p><FaEnvelope /> Email</p></label>
-                        <input type="text" name="user-email" pattern=".+@gmail\.com" /* value={email} onChange={(e) => {
+                        <input type="text" name="user-email" pattern=".+@gmail\.com" value={email} onChange={(e) => {
                             setEmail(e.target.value)
-                        }} */ required />
+                        }} required />
 
                         <label for="password"><p><FaLock /> Password</p></label>
-                        <input type="password" name="user-password" /* value={password} onChange={(e) => {
+                        <input type="password" name="user-password" value={password} onChange={(e) => {
                             setPassword(e.target.value)
-                        }} */ required />
+                        }} required />
 
                         <label for="confirm-password"><p><FaLock /> Confirm Password</p></label>
                         <input type="password" name="confirm-pword" required />
