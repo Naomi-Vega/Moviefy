@@ -1,6 +1,6 @@
 import React from "react";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
-import Header from "./header/header";
+import Navbar from "./NavBar";
 import "../components/LandingPage.css"
 import home from "./images/home-img.jpg"
 
@@ -15,7 +15,7 @@ function LandingPage() {
 
     return (
         <>
-            <Header />
+          
             <div className="landing-container">
                 <div className="home-page-left">
                     <h1>Welcome to Moviefy</h1>

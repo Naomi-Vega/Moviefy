@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Header from "./header/header";
+import Navbar from "./NavBar";
 import Movie from "./Movie";
 import "../components/ExplorePage.css";
 import SearchBox from "./SearchBox";
@@ -31,7 +31,7 @@ useEffect(() => {
     
     return (
         <>
-            <Header />
+            
 
             <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
 
