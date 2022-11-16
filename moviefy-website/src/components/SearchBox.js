@@ -1,4 +1,6 @@
 import React from 'react';
+import "../components/UserPage.css";
+
 
 const SearchBox = (props) => {
     return (

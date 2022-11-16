@@ -71,12 +71,34 @@ body {
 .nav-nav {
     display: flex;
     margin-left: 7rem;
-    font-weight: bolder;
+    margin-top: 2rem;
+list-style-type: none;
     text-decoration: none;
 
 
 }
 
+
+
 li {
     margin-right: 4rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+a:link {
+    text-decoration: none;
+    color: #fff;
+    
+}
+a:hover {
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
 }
