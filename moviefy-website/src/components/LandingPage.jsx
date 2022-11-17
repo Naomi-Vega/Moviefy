@@ -6,14 +6,14 @@ import home from "./images/home-img.jpg"
 import axios from "axios"
 import { useState } from "react"
 import { useAppContext } from "../AppContext";
-/* import { useNavigate } from "react-router-dom"; */
+import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
         const [name, setName] = useState("")
         const [email, setEmail] = useState("")
         const [password, setPassword] = useState("")
         const contextData = useAppContext()
-     /*    const navigate = useNavigate() */
+        const navigate = useNavigate()
 
     return (
         <>
@@ -37,6 +37,7 @@ function LandingPage() {
                     console.log(res.data)
                     localStorage.setItem("token", res.data.token)
                     contextData.setUser(res.data.user)
+                    navigate("/explore")
                 }}>
                         <label for="user-name"><p><FaUserAlt /> Name</p></label>
                         <input type="text" name="username" value={name} onChange={(e) => {

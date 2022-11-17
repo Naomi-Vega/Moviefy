@@ -4,11 +4,13 @@ import { FaUserAlt, FaLock } from "react-icons/fa";
 import "../components/SignIn.css"
 import { useAppContext } from "../AppContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const contextData = useAppContext()
+    const navigate = useNavigate()
     return (
         <>
             <Header />
@@ -23,6 +25,7 @@ function SignIn() {
                     console.log(res.data)
                     localStorage.setItem("token", res.data.token)
                     contextData.setUser(res.data.user)
+                    navigate("/explore")
                 }}>
                     <label for="email"><FaUserAlt /> Email</label>
                     <input type="email" placeholder="Enter email" value={email} onChange={(e) => {

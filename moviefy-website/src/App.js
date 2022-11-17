@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { useAppContext } from './AppContext';
 import ExplorePage from './components/ExplorePage';
@@ -24,9 +25,11 @@ function App() {
 
   return (
     <div>
-      <LandingPage />
-      <SignIn />
-      <ExplorePage />
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/explore' element={<ExplorePage />} />
+      </Routes>
     </div>
   );
 }
