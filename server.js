@@ -28,6 +28,22 @@ app.post ("/register", async (req, res) =>{
     })
 })
 
+app.post ("/signin", async (req, res) =>{
+    const user = await userModel.findOne({
+        email:req.body.email,
+        password:req.body.password
+    })
+    if (!user){
+        res.status(500).json("Wrong email or password")
+        return
+    }
+    const token = jwt.sign({userId:user._id}, "Naomi",{expiresIn:"2d"})
+    res.json({
+        token, user
+    })
+
+})
+
 app.get ("/currentUser", async (req, res) => {
     const token = req.get("Authorization")
     try {

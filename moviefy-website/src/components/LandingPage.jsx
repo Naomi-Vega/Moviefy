@@ -33,7 +33,7 @@ function LandingPage() {
                     var user = {
                         name, email, password
                     }
-                    const res = await axios.post ("http://localhost:5000/register", user)
+                    const res = await axios.post ("/register", user)
                     console.log(res.data)
                     localStorage.setItem("token", res.data.token)
                     contextData.setUser(res.data.user)

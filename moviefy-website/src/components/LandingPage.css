@@ -6,7 +6,7 @@ body {
 .landing-container {
     display: flex;
     justify-content: space-between;
-}
+} 
 
 .home-page-left {
     padding: 80px 0 80px 200px;
@@ -23,6 +23,7 @@ body {
     padding: 10px 50px 10px 50px;
     margin: 60px 150px;
     font-size: 15px;
+    border-radius: 10px;
 }
 
 .register {
@@ -30,7 +31,7 @@ body {
     text-align: center;
 }
 
-input {
+.landing-container input {
     background-color: rgb(169, 172, 169);
     border: none;
     border-radius: 30px;
