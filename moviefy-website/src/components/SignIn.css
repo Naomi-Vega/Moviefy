@@ -1,0 +1,23 @@
+.sign-in-title {
+    width: 300px;
+    height: 380px;
+    background-color: rgba(128, 128, 128, 0.89);
+    color: white;
+    margin: 70px auto;
+    border-radius: 10px;
+}
+
+.sign-in-title h1 {
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
+
+.sign-in-section input {
+    background-color: rgb(169, 172, 169);
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    width: 250px;
+    height: 25px;
+}
