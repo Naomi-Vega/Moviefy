@@ -5,6 +5,7 @@ import "../components/UserPage.css";
 import SearchBox from "./SearchBox";
 import ExplorePage from "./ExplorePage";
 import AddFavourites from "./AddFavourites";
+import Button from 'react-bootstrap'
 
 const UserPage = () => {
     const [movies, setMovies] = useState([]);

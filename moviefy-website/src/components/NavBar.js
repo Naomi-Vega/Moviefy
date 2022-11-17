@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
     return (
-        <>
+        <div className="header-header">
             <div className="header">
                 <div className="logobox">
                 <Link to="/"><img className="logo" src={logo} alt="Logo" /></Link>
                 </div>
+                <div className="right-nav">
                 <nav className="nav">
                     <ul className="nav-nav">
                     <li>
@@ -24,8 +25,10 @@ export const Navbar = () => {
                 
                 </nav>
                 <button className="sign-in">Sign in</button>
+                </div>
+                
             </div>
-        </>
+        </div>
     )
 }
 

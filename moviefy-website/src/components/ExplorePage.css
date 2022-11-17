@@ -1,6 +1,7 @@
 body {
-    background-color: rgba(128, 128, 128, 0.603);
+    background-color: rgba(231, 231, 231, 0.603);
     font-family: 'Comfortaa', cursive;
+    
 }
 
 img {
@@ -15,10 +16,20 @@ img {
     
     
 }
+.searchbox-explore {
+  
+    padding-top: 5rem;
+   
+}
+
+.yyy {
+    background-color: black;
+}
 
 .explore-area {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    
 }
 
 .watched-btn {

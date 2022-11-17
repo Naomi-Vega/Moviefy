@@ -30,11 +30,11 @@ useEffect(() => {
 }, [searchValue]);
     
     return (
-        <>
+        <div className="yyy">
             
-
+            <div className="searchbox-explore">
             <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-
+</div>
             <div className="explore-area">
                 
             <Movie movies={movies} />                    
@@ -42,7 +42,7 @@ useEffect(() => {
               
                
             </div>
-        </>
+        </div>
     );
 };
 
