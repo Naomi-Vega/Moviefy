@@ -1,12 +1,13 @@
 import React from "react";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
-import Header from "./header/header";
+
 import "../components/LandingPage.css"
 import home from "./images/home-img.jpg"
 import axios from "axios"
 import { useState } from "react"
 import { useAppContext } from "../AppContext";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./NavBar";
 
 function LandingPage() {
         const [name, setName] = useState("")
@@ -17,7 +18,7 @@ function LandingPage() {
 
     return (
         <>
-            <Header />
+            <Navbar />
             <div className="landing-container">
                 <div className="home-page-left">
                     <h1>Welcome to Moviefy</h1>

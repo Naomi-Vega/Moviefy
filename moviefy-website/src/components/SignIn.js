@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Header from "./header/header";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import "../components/SignIn.css"
 import { useAppContext } from "../AppContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./NavBar";
 
 function SignIn() {
     const [email, setEmail] = useState("")
@@ -13,7 +13,7 @@ function SignIn() {
     const navigate = useNavigate()
     return (
         <>
-            <Header />
+            <Navbar />
             <div className="sign-in-title">
                 <h1>Sign In</h1>
                 <form className="sign-in-section" onSubmit={async (e) => {

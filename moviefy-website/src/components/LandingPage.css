@@ -1,16 +1,21 @@
 body {
-    background-color: rgba(128, 128, 128, 0.603);
+    background-image: url("./images/lp.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
     font-family: 'Comfortaa', cursive;
 }
 
 .landing-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-top: 5rem;
 } 
 
 .home-page-left {
     padding: 80px 0 80px 200px;
     width: 70%;
+    color: #fff;
 }
 
 .home-img {
@@ -20,10 +25,10 @@ body {
 
 .home-page-right {
     background-color: rgba(128, 128, 128, 0.89);
+    border-radius: .5rem;
     padding: 10px 50px 10px 50px;
     margin: 60px 150px;
     font-size: 15px;
-    border-radius: 10px;
 }
 
 .register {
@@ -32,8 +37,9 @@ body {
 }
 
 .landing-container input {
-    background-color: rgb(169, 172, 169);
+    background-color: rgb(184, 184, 184);
     border: none;
+    color: rgb(192, 192, 192);
     border-radius: 30px;
     padding: 10px;
     width: 250px;

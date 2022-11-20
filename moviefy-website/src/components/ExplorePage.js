@@ -1,45 +1,49 @@
 import React, { useState, useEffect } from "react";
-import Header from "./header/header";
 import Movie from "./Movie";
 import "../components/ExplorePage.css";
 import SearchBox from "./SearchBox";
-import HeaderLoggedIn from "./header/headerLoggedIn";
+import Navbar from "./NavBar";
+
 
 const ExplorePage = () => {
     const [movies, setMovies] = useState([]);
+    const [favourites, setFavourites] = useState([]);
     const [searchValue, setSearchValue] = useState('');
 
 
     const getMovieRequest = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263f7004`;
+        const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263f7004`;
 
-    const response = await fetch(url);
-    const responseJson = await response.json();
+        const response = await fetch(url);
+        const responseJson = await response.json();
 
-    if (responseJson.Search) {
-        setMovies(responseJson.Search);
-    }
+        if (responseJson.Search) {
+            setMovies(responseJson.Search);
+        }
 
-   
-   
-};
 
-useEffect(() => {
-    getMovieRequest(searchValue);
-}, [searchValue]);
-    
+
+    };
+
+    useEffect(() => {
+        getMovieRequest(searchValue);
+    }, [searchValue]);
+
     return (
         <>
-            <HeaderLoggedIn />
+            <Navbar />
+            <div className="yyy">
 
-            <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+                <div className="searchbox-explore">
+                    <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+                </div>
+                <div className="explore-area">
 
-            <div className="explore-area">
-                
-            <Movie movies={movies} />                    
-                    
-              
-               
+                    <Movie movies={movies} />
+
+
+
+                </div>
             </div>
         </>
     );
