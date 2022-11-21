@@ -6,6 +6,7 @@ import ExplorePage from "./ExplorePage";
 import AddFavourites from "./AddFavourites";
 import Button from 'react-bootstrap'
 import Navbar from "./NavBar";
+import { useAppContext } from "../AppContext";
 
 const UserPage = () => {
     const [movies, setMovies] = useState([]);
@@ -29,22 +30,30 @@ const UserPage = () => {
 useEffect(() => {
     getMovieRequest(searchValue);
 }, [searchValue]);
+
+const contextData = useAppContext()
     
     return (
         <>
             <Navbar />  
 
             <div className="UserProperties">
-            <button className="watched">Watched</button>
-                <button className="toWatch">To Watch</button>
-                <button className="favourites">Favourites</button>
+            <button className="watched" onClick={()=>{
+                    contextData.setStatus("watched")
+                }}>Watched</button>
+                <button className="toWatch" onClick={()=>{
+                    contextData.setStatus("toWatch")
+                }}>To Watch</button>
+                <button className="favourites" onClick={()=>{
+                    contextData.setStatus("favorites")
+                }}>Favourites</button>
             </div>
 
-            <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+            {/* <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} /> */}
 
             <div className="explore-area">
                 
-            <Movie movies={movies} />                    
+            <Movie movies={contextData.status=="favorites"?contextData.favorites:contextData.status=="toWatch"?contextData.toWatch:contextData.status=="watched"?contextData.watched:[]} />                    
                     
               
                

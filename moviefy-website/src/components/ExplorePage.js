@@ -7,27 +7,37 @@ import Navbar from "./NavBar";
 
 const ExplorePage = () => {
     const [movies, setMovies] = useState([]);
+    const [searchMovies, setSearchMovies] = useState([]);
     const [favourites, setFavourites] = useState([]);
     const [searchValue, setSearchValue] = useState('');
 
 
-    const getMovieRequest = async (searchValue) => {
-        const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263f7004`;
+    const getMovies = async () => {
+        const url = `https://api.themoviedb.org/3/movie/popular?api_key=ca776bbe7736cbc79b13f2bf8722288d`;
 
         const response = await fetch(url);
-        const responseJson = await response.json();
+        const data = await response.json();
 
-        if (responseJson.Search) {
-            setMovies(responseJson.Search);
-        }
+            setMovies(data.results);
+            setSearchMovies(data.results);
+    };
 
+    const getSearchMovies = async (search) => {
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=ca776bbe7736cbc79b13f2bf8722288d&query=${search}`;
 
-
+        const response = await fetch(url);
+        const data = await response.json();
+            if(search.trim().length==0){
+                setSearchMovies(movies)
+                return
+            }
+            setSearchMovies(data.results || []);
     };
 
     useEffect(() => {
-        getMovieRequest(searchValue);
-    }, [searchValue]);
+        getMovies();
+    }, []);
+
 
     return (
         <>
@@ -35,11 +45,11 @@ const ExplorePage = () => {
             <div className="yyy">
 
                 <div className="searchbox-explore">
-                    <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+                    <SearchBox getSearchMovies={getSearchMovies} searchValue={searchValue} setSearchValue={setSearchValue} />
                 </div>
                 <div className="explore-area">
 
-                    <Movie movies={movies} />
+                    <Movie movies={searchMovies} />
 
 
 

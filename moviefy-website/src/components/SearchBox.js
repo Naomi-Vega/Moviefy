@@ -11,7 +11,10 @@ const SearchBox = (props) => {
             <form action="" className='search-bar'>
             
             <button type="submit"><FaSearch /></button>
-            <input value={props.value} onChange={(event) => props.setSearchValue(event.target.value)} placeholder='Search' name="s">
+            <input value={props.value} onChange={(event) => {
+                props.setSearchValue(event.target.value)
+                props.getSearchMovies(event.target.value)
+                }} placeholder='Search' name="s">
             
             </input>
             </form>
