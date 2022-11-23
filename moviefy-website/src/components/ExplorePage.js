@@ -3,6 +3,7 @@ import Movie from "./Movie";
 import "../components/ExplorePage.css";
 import SearchBox from "./SearchBox";
 import Navbar from "./NavBar";
+import MovieSlider from "./MovieSlider";
 
 
 const ExplorePage = () => {
@@ -10,6 +11,7 @@ const ExplorePage = () => {
     const [searchMovies, setSearchMovies] = useState([]);
     const [favourites, setFavourites] = useState([]);
     const [searchValue, setSearchValue] = useState('');
+    const [upcomingMovies, setUpcomingMovies] = useState([]);
 
 
     const getMovies = async () => {
@@ -20,6 +22,15 @@ const ExplorePage = () => {
 
             setMovies(data.results);
             setSearchMovies(data.results);
+    };
+
+    const getUpcomingMovies = async () => {
+        const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=ca776bbe7736cbc79b13f2bf8722288d`;
+
+        const response = await fetch(url);
+        const data = await response.json();
+
+            setUpcomingMovies(data.results);
     };
 
     const getSearchMovies = async (search) => {
@@ -36,6 +47,7 @@ const ExplorePage = () => {
 
     useEffect(() => {
         getMovies();
+        getUpcomingMovies();
     }, []);
 
 
@@ -49,7 +61,8 @@ const ExplorePage = () => {
                 </div>
                 <div className="explore-area">
 
-                    <Movie movies={searchMovies} />
+                    <MovieSlider movies={searchMovies} />
+                    <MovieSlider movies={upcomingMovies} />
 
 
 

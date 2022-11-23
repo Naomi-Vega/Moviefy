@@ -4,7 +4,7 @@ import "../components/UserPage.css";
 import SearchBox from "./SearchBox";
 import ExplorePage from "./ExplorePage";
 import AddFavourites from "./AddFavourites";
-import Button from 'react-bootstrap'
+/* import Button from 'react-bootstrap' */
 import Navbar from "./NavBar";
 import { useAppContext } from "../AppContext";
 
