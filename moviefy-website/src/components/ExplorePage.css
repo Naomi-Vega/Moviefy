@@ -1,13 +1,13 @@
 body {
     background-color: rgba(231, 231, 231, 0.603);
     font-family: 'Comfortaa', cursive;
-    
 }
 
 .movie-container img {
     height: 100%;
     width: 100%;
     display: block;
+
 }
 
 .movie-container .image-container {
@@ -16,8 +16,8 @@ body {
 
 .movie-container {
     /* margin: 20px 20px 20px 20px; */
-    padding: 10px 10px 10px 10px;
-    background-color: rgb(241, 241, 241);
+    padding: 7px;
+    background-color: rgba(241, 241, 241, 0.884);
     /* width: 17rem; */
 }
 
@@ -64,9 +64,10 @@ body {
     background-color: black;
 }
 
-.explore-area {
-    
-    
+.explore-area h1{
+    color: white;
+    margin-left: 30px;
+    font-size: 25px;
 }
 
 .watched-btn {
@@ -119,4 +120,13 @@ body {
 }
 .fav-btn:hover {
     background-color: rgb(221, 182, 8);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: white!important;
+}
+
+.swiper {
+    padding-left: 50px!important;
+    padding-right: 50px!important;
 }

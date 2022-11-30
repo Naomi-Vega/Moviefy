@@ -7,9 +7,10 @@ import AddFavourites from "./AddFavourites";
 /* import Button from 'react-bootstrap' */
 import Navbar from "./NavBar";
 import { useAppContext } from "../AppContext";
+import AddReview from "./AddReview";
 
 const UserPage = () => {
-    const [movies, setMovies] = useState([]);
+    /* const [movies, setMovies] = useState([]);
     const [searchValue, setSearchValue] = useState('');
 
 
@@ -25,18 +26,26 @@ const UserPage = () => {
 
    
    
-};
+}; */
 
-useEffect(() => {
+/* useEffect(() => {
     getMovieRequest(searchValue);
-}, [searchValue]);
+}, [searchValue]); */
 
 const contextData = useAppContext()
-    
+const [show, setShow] = useState(false);
+const [reviewMovie, setReviewMovie] = useState({})
+
+  const handleClose = () => setShow(false);
+  const handleShow = (movie) => {
+    setShow(true);
+    setReviewMovie(movie)
+}    
+
     return (
         <>
             <Navbar />  
-
+            <AddReview movie={reviewMovie} show={show} handleClose={handleClose} handleShow={handleShow}/>
             <div className="UserProperties">
             <button className="watched" onClick={()=>{
                     contextData.setStatus("watched")
@@ -53,7 +62,7 @@ const contextData = useAppContext()
 
             <div className="explore-area">
                 
-            <Movie movies={contextData.status=="favorites"?contextData.favorites:contextData.status=="toWatch"?contextData.toWatch:contextData.status=="watched"?contextData.watched:[]} />                    
+            <Movie openReview={handleShow} watched={contextData.status=="watched"} movies={contextData.status=="favorites"?contextData.favorites:contextData.status=="toWatch"?contextData.toWatch:contextData.status=="watched"?contextData.watched:[]} />                    
                     
               
                

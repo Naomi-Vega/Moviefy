@@ -1,4 +1,4 @@
-const { createContext, useContext, useState } = require("react");
+const { createContext, useContext, useState, useEffect } = require("react");
 
 const AppContext = createContext()
 
@@ -9,16 +9,25 @@ export const AppContextProvider = (props) => {
     const [watched, setWatched] = useState([])
     const [status, setStatus] = useState("favorites")
 
+    useEffect (() => {
+        setFavorites (JSON.parse(localStorage.getItem("favorites"))||[])
+        setToWatch (JSON.parse(localStorage.getItem("toWatch"))||[])
+        setWatched (JSON.parse(localStorage.getItem("watched"))||[])
+    }, [])
+
     const addFavorite = (movie) =>{
         setFavorites([...favorites, movie])
+        localStorage.setItem("favorites", JSON.stringify([...favorites, movie]))
     }
 
     const addToWatch = (movie) =>{
         setToWatch([...toWatch, movie])
+        localStorage.setItem("toWatch", JSON.stringify([...toWatch, movie]))
     }
 
     const addWatched = (movie) =>{
         setWatched([...watched, movie])
+        localStorage.setItem("watched", JSON.stringify([...watched, movie]))
     }
 
     const value = {
