@@ -63,7 +63,7 @@ const [reviewMovie, setReviewMovie] = useState({})
             <div className="explore-area">
                 
             <Movie openReview={handleShow} watched={contextData.status=="watched"} movies={contextData.status=="favorites"?contextData.favorites:contextData.status=="toWatch"?contextData.toWatch:contextData.status=="watched"?contextData.watched:[]} />                    
-                    
+
               
                
             </div>

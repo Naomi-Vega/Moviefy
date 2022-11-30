@@ -3,6 +3,10 @@ body {
     font-family: 'Comfortaa', cursive;
 }
 
+.popular-slide {
+   padding-top: 10px;
+}
+
 .movie-container img {
     height: 100%;
     width: 100%;
@@ -129,4 +133,9 @@ body {
 .swiper {
     padding-left: 50px!important;
     padding-right: 50px!important;
+}
+
+.explore-area h1 {
+    padding-top: 40px;
+    padding-bottom: 20px;
 }

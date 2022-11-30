@@ -73,7 +73,7 @@ const ExplorePage = () => {
                 <div className="explore-area">
                     {!searchMovies && <>
                     <h1>Popular Movies</h1>
-                    <MovieSlider movies={popularMovies} />
+                    <MovieSlider className="popular-slide" movies={popularMovies} />
                     <h1>Upcoming Movies</h1>
                     <MovieSlider movies={upcomingMovies} />
                     <h1>Top Rated Movies</h1>
