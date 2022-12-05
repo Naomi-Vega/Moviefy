@@ -13,7 +13,7 @@ body {
 
     width: 100%;
     padding: 1rem 6rem 0px 6rem;
-    height: 95px;
+    height: 90px;
     background: #000000da;
     display: flex;
     justify-content: space-between;
@@ -30,7 +30,8 @@ body {
 
 
   .header img {
-    width: 13rem;
+    margin-top: .5rem;
+    width: 14rem;
     height: 2.4rem;
     
     

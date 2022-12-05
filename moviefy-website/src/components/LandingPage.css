@@ -9,13 +9,18 @@ body {
 .landing-container {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 5rem;
+    margin-top: 6rem;
 } 
 
 .home-page-left {
-    padding: 80px 0 80px 200px;
-    width: 70%;
+    padding: 4rem 0 0px 7rem;
+    width: 100%;
     color: #fff;
+}
+
+h1 {
+    font-size: 1.7rem;
+    padding-bottom: 1.6rem;
 }
 
 .home-img {
@@ -27,7 +32,7 @@ body {
     background-color: rgba(128, 128, 128, 0.89);
     border-radius: .5rem;
     padding: 10px 50px 10px 50px;
-    margin: 60px 150px;
+    margin: 60px 15px;
     font-size: 15px;
 }
 
@@ -37,13 +42,14 @@ body {
 }
 
 .landing-container input {
+    display: flex;
     background-color: rgb(184, 184, 184);
     border: none;
-    color: rgb(192, 192, 192);
-    border-radius: 30px;
-    padding: 10px;
-    width: 250px;
-    height: 25px;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    padding: 0px 0px 0px 0px;
+    width: 200px;
+    height: 30px;
 }
 
 h4 {

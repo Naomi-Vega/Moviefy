@@ -15,14 +15,17 @@ body {
 }
 
 .movie-container .image-container {
-    height: 20rem;
+    height: 17rem;
 }
 
 .movie-container {
     /* margin: 20px 20px 20px 20px; */
     padding: 7px;
     background-color: rgba(241, 241, 241, 0.884);
-    /* width: 17rem; */
+    width: 13rem; 
+}
+.inside-movie-overlay {
+display: flex;
 }
 
 .movie-overlay {
@@ -65,8 +68,8 @@ body {
 }
 
 .yyy {
-    background-color: black;
-}
+    background: rgb(66,41,78);
+background: linear-gradient(0deg, rgb(23, 14, 27) 0%, rgb(29, 18, 34) 40%, rgba(0,0,0,1) 100%);}
 
 .explore-area h1{
     color: white;

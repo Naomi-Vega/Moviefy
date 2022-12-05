@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./images/moviefy-01.png";
+import logo from "./images/moviefy.png";
 import "../components/Navbar.css"
 import { Link, useNavigate } from "react-router-dom";
 

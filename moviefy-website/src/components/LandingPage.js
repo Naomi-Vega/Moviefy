@@ -21,13 +21,14 @@ function LandingPage() {
             <Navbar />
             <div className="landing-container">
                 <div className="home-page-left">
-                    <h1>Welcome to Moviefy</h1>
-                    <h2>Your favorite movie tracker</h2>
-                    <img className="home-img" src={home} alt="Home" />
+                    <h1>Track films you’ve watched.</h1>
+                    <h1>Save those you want to see.</h1>
+                    <h1>Tell your friends what’s good.</h1>
+
                 </div>
                 <div className="home-page-right">
                     <div className="register">
-                        <p><strong>Register now!</strong> To begin your Moviefy experience</p>
+                        <p><strong>Get Started</strong> I'ts free!</p>
                     </div>
                     <form className="login-section" onSubmit={async (e) => {
                     e.preventDefault()

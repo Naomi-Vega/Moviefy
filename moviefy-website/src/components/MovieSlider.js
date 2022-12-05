@@ -26,6 +26,11 @@ const MovieSlider = (props) => {
                         <div className='image-container slider-image-container'>
                             <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} alt="movie"></img>
                             <div className='movie-overlay'>
+                            <div className='inside-movie-overlay'>
+                                <div className='overlay-text'>
+                                <p className='movie-title'>{movie.title}</p>
+                                </div>
+                                <div className='overlay-buttons'>
                                 <button className='watched-btn' onClick={() => {
                                     contextData.addWatched(movie)
                                 }}><FaEye /></button>
@@ -35,6 +40,8 @@ const MovieSlider = (props) => {
                                 <button className='fav-btn' onClick={() => {
                                     contextData.addFavorite(movie)
                                 }}><FaStar /></button>
+                                </div>
+                            </div>
                             </div>
 
                         </div>
