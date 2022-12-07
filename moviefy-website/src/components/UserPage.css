@@ -1,7 +1,4 @@
 button {
-
-
-
   align-items: center;
   appearance: none;
   background: transparent;
@@ -83,10 +80,6 @@ input {
     
     font-family: 'Comfortaa', cursive;
     font-weight: bold;
-  
-
-
-
 }
 
 input[type=text] {
@@ -96,3 +89,25 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
   }
+
+.movie-container-userpage {
+  padding: 7px;
+  margin: 20px;
+    background-color: rgba(241, 241, 241, 0.884);
+}
+
+.movie-container-userpage img {
+  width: 100%;  
+}
+
+.movies-container-userpage {
+  display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px
+  /*padding: 20px;*/
+}
+
+/* .movie-container-userpage .image-container {
+  height: 20rem;
+} */
+

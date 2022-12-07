@@ -9,16 +9,16 @@ const Movie = (props) => {
     const contextData = useAppContext()
 
     return (
-        <div className='movies-container'>
+        <div className='movies-container-userpage'>
             {props.movies.map((movie, index) => (
-                <div className="movie-container">
+                <div className="movie-container-userpage">
                     <div className='image-container slider-image-container'>
                         <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} alt="movie"></img>
 
                         <div className='movie-overlay'>
-                            {/* <p>{movie.title}</p>
+                            <p>{movie.title}</p>
                         <p>{movie.release_date}</p>
-                        <p className='movie-container-overview'>{movie.overview}</p> */}
+                        {/* <p className='movie-container-overview'>{movie.overview}</p> */}
                             <button className='watched-btn' onClick={() => {
                                 contextData.addWatched(movie)
                             }}><FaEye /></button>

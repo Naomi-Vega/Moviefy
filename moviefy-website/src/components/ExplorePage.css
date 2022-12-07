@@ -43,21 +43,8 @@ body {
     display: flex;
 }
 
-.movie-container-overview {
-    height: 150px;
-    overflow: hidden;
-}
-
-.movies-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px
-}
-
 .searchbox-explore {
-  
     padding-top: 5rem;
-   
 }
 
 .yyy {
@@ -71,7 +58,6 @@ body {
 }
 
 .watched-btn {
-    
     margin: 0px 10px 0px 10px;
     background-color: DodgerBlue; /* Blue background */
   border: none; /* Remove borders */
@@ -80,7 +66,6 @@ body {
   cursor: pointer; /* Mouse pointer on hover */
   border-radius: 100px;
   padding: 12px 16px; /* Some padding */
-
 }
 
 .watched-btn:hover {
@@ -88,8 +73,6 @@ body {
 }
 
 .towatch-btn {
-
-  
     margin: 0px 10px 0px 10px;
     background-color: rgb(50, 214, 0); /* Blue background */
   border: none; /* Remove borders */
@@ -98,7 +81,6 @@ body {
   cursor: pointer; /* Mouse pointer on hover */
   border-radius: 100px;
   padding: 12px 16px; /* Some padding */
-
 }
 
 .towatch-btn:hover {
@@ -106,8 +88,6 @@ body {
 }
 
 .fav-btn {
-
-  
     margin: 0px 10px 0px 10px;
     background-color: rgb(255, 212, 23); /* Blue background */
   border: none; /* Remove borders */
