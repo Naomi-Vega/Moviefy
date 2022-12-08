@@ -2,10 +2,13 @@ import React from "react";
 import logo from "./images/moviefy-01.png";
 import "../components/Navbar.css"
 import { Link, useNavigate } from "react-router-dom";
+import { useAppContext } from "../AppContext";
 
 
-export const Navbar = () => {
+export const Navbar = (props) => {
     const navigate = useNavigate()
+    const contextData = useAppContext()
+
     return (
         <div className="header-header">
             <div className="header">
@@ -18,14 +21,20 @@ export const Navbar = () => {
                             <li>
                                 <Link to="/explore">Explore</Link>
                             </li>
-                            <li>
-                                <Link to="/user">User Page</Link>
-                            </li>
+                            {contextData.user && <li>
+                                <Link to="/user">{contextData.user.name}'s Page</Link>
+                            </li>}
                         </ul>
                     </nav>
-                    <button className="sign-in" onClick={() => {
-                        navigate("/signin")
-                    }}>Sign in</button>
+                    {!contextData.user && <button className="sign-in" onClick={() => {
+                        props.setShowSignIn(true)
+                    }}>Sign in</button>}
+                    {contextData.user && <button className="sign-in" onClick={()=>{
+                    localStorage.removeItem("token")
+                    contextData.setUser(null)
+                    navigate("/")
+                    }}>Log Out</button>}
+
                 </div>
             </div>
         </div>

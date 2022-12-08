@@ -55,6 +55,45 @@ app.get ("/currentUser", async (req, res) => {
     }
 })
 
+app.post ("/favorite", async (req, res) => {
+    const token = req.get("Authorization")
+    try {
+        const userData = jwt.verify(token, "Naomi")
+        const user = await userModel.findById(userData.userId)
+        user.favorites.push(req.body)
+        await user.save()
+        res.json(user)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
+app.post ("/toWatch", async (req, res) => {
+    const token = req.get("Authorization")
+    try {
+        const userData = jwt.verify(token, "Naomi")
+        const user = await userModel.findById(userData.userId)
+        user.toWatch.push(req.body)
+        await user.save()
+        res.json(user)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
+app.post ("/watched", async (req, res) => {
+    const token = req.get("Authorization")
+    try {
+        const userData = jwt.verify(token, "Naomi")
+        const user = await userModel.findById(userData.userId)
+        user.watched.push(req.body)
+        await user.save()
+        res.json(user)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
 async function startServer (){
     await mongoose.connect("mongodb+srv://NaomiVega:Naomi123@cluster0.c62ouri.mongodb.net/Moviefy?retryWrites=true&w=majority")
     app.listen(5000, () => {

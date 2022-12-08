@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const { createContext, useContext, useState, useEffect } = require("react");
 
 const AppContext = createContext()
@@ -15,19 +17,40 @@ export const AppContextProvider = (props) => {
         setWatched (JSON.parse(localStorage.getItem("watched"))||[])
     }, [])
 
-    const addFavorite = (movie) =>{
+    const addFavorite = async (movie) =>{
         setFavorites([...favorites, movie])
         localStorage.setItem("favorites", JSON.stringify([...favorites, movie]))
+        const res = await axios.post("/favorite", movie, {
+            headers:{
+                Authorization:localStorage.getItem("token")
+              }
+        })
+        console.log(res.data)
+        setUser(res.data)
     }
 
-    const addToWatch = (movie) =>{
+    const addToWatch = async (movie) =>{
         setToWatch([...toWatch, movie])
         localStorage.setItem("toWatch", JSON.stringify([...toWatch, movie]))
+        const res = await axios.post("/toWatch", movie, {
+            headers:{
+                Authorization:localStorage.getItem("token")
+              }
+        })
+        console.log(res.data)
+        setUser(res.data)
     }
 
-    const addWatched = (movie) =>{
+    const addWatched = async (movie) =>{
         setWatched([...watched, movie])
         localStorage.setItem("watched", JSON.stringify([...watched, movie]))
+        const res = await axios.post("/watched", movie, {
+            headers:{
+                Authorization:localStorage.getItem("token")
+              }
+        })
+        console.log(res.data)
+        setUser(res.data)
     }
 
     const value = {

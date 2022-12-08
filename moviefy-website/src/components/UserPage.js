@@ -8,6 +8,7 @@ import AddFavourites from "./AddFavourites";
 import Navbar from "./NavBar";
 import { useAppContext } from "../AppContext";
 import AddReview from "./AddReview";
+import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {
     /* const [movies, setMovies] = useState([]);
@@ -35,12 +36,19 @@ const UserPage = () => {
 const contextData = useAppContext()
 const [show, setShow] = useState(false);
 const [reviewMovie, setReviewMovie] = useState({})
+const navigate = useNavigate()
 
   const handleClose = () => setShow(false);
   const handleShow = (movie) => {
     setShow(true);
     setReviewMovie(movie)
 }    
+
+    useEffect(() => {
+        if (!contextData.user){
+            navigate("/signin")
+        }
+    }, [])
 
     return (
         <>
@@ -62,7 +70,7 @@ const [reviewMovie, setReviewMovie] = useState({})
 
             <div className="explore-area">
                 
-            <Movie openReview={handleShow} watched={contextData.status=="watched"} movies={contextData.status=="favorites"?contextData.favorites:contextData.status=="toWatch"?contextData.toWatch:contextData.status=="watched"?contextData.watched:[]} />                    
+            <Movie openReview={handleShow} watched={contextData.status=="watched"} movies={contextData.status=="favorites"?contextData.user.favorites:contextData.status=="toWatch"?contextData.user.toWatch:contextData.status=="watched"?contextData.user.watched:[]} />                    
                     
               
                

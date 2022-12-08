@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useAppContext } from './AppContext';
 import ExplorePage from './components/ExplorePage';
@@ -10,19 +10,29 @@ import UserPage from './components/UserPage';
 
 function App() {
   const contextData = useAppContext()
+  const [userLoading, setUserLoading] = useState(true)
 
   const getCurrentUser = async () => {
-    const res = await axios.get("/currentUser", {
-      headers:{
-        Authorization:localStorage.getItem("token")
-      }
-    })
-    contextData.setUser(res.data)
+    try {
+      const res = await axios.get("/currentUser", {
+        headers:{
+          Authorization:localStorage.getItem("token")
+        }
+      })
+      contextData.setUser(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+    setUserLoading(false)
   }
 
   useEffect (() => {
     getCurrentUser()
   }, [])
+
+  if (userLoading) {
+    return <p>Loading</p>
+  }
 
   return (
     <div>
