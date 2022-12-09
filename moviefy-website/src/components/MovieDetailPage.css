@@ -1,0 +1,12 @@
+.movie-detail-container {
+    margin-top: 100px;
+    display: flex;
+    gap: 30px;
+    color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.movie-detail-genre {
+    display: flex;
+}

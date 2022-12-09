@@ -7,6 +7,7 @@ import LandingPage from './components/LandingPage';
 import Navbar from './components/NavBar';
 import SignIn from './components/SignIn';
 import UserPage from './components/UserPage';
+import MovieDetailPage from './components/MovieDetailPage';
 
 function App() {
   const contextData = useAppContext()
@@ -42,6 +43,7 @@ function App() {
         <Route path='/signin' element={<SignIn />} />
         <Route path='/explore' element={<ExplorePage />} />
         <Route path='/user' element={<UserPage />} />
+        <Route path='/movie/:id' element={<MovieDetailPage />} />
       </Routes>
     </div>
   );

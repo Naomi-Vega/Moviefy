@@ -5,11 +5,13 @@ import "../components/ExplorePage.css"
 import { FaEye, FaAngleDoubleRight, FaStar } from "react-icons/fa";
 import { useAppContext } from '../AppContext';
 import { Navigation } from 'swiper';
+import { useNavigate } from 'react-router-dom'
 import 'swiper/css/navigation'
 
 
 const MovieSlider = (props) => {
     const contextData = useAppContext()
+    const navigate = useNavigate()
 
     return <div>
         <Swiper
@@ -26,6 +28,7 @@ const MovieSlider = (props) => {
                         <div className='image-container slider-image-container'>
                             <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} alt="movie"></img>
                             <div className='movie-overlay'>
+                                {/* <div>
                                 <button className='watched-btn' onClick={() => {
                                     contextData.addWatched(movie)
                                 }}><FaEye /></button>
@@ -35,6 +38,10 @@ const MovieSlider = (props) => {
                                 <button className='fav-btn' onClick={() => {
                                     contextData.addFavorite(movie)
                                 }}><FaStar /></button>
+                                </div> */}
+                                <button onClick={()=> {
+                                    navigate(`/movie/${movie.id}`)
+                                }}>See details</button>
                             </div>
 
                         </div>

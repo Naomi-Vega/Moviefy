@@ -3,7 +3,7 @@ const mongoose = require ("mongoose")
 const userModel = require ("./models/user-model")
 const cors = require ("cors")
 const jwt = require ("jsonwebtoken")
-
+const reviewModel = require ("./models/review-model")
 const app = express()
 
 app.use(express.json())
@@ -89,6 +89,34 @@ app.post ("/watched", async (req, res) => {
         user.watched.push(req.body)
         await user.save()
         res.json(user)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
+app.post ("/review", async (req, res) => {
+    const token = req.get("Authorization")
+    try {
+        const userData = jwt.verify(token, "Naomi")
+        const review = new reviewModel({
+            rating: req.body.rating,
+            review: req.body.review,
+            movie: req.body.movie,
+            user: userData.userId
+        })
+        await review.save()
+        res.json(review)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
+app.get ("/review/:movie", async (req, res) => {
+    
+    try {
+        
+        const reviews = await reviewModel.find({movie:req.params.movie})
+        res.json(reviews)
     } catch (error) {
         res.status(500).json("You're not signed in")
     }

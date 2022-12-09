@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -5,7 +6,20 @@ import './AddReview.css'
 
 
 function AddReview(props) {
-  
+  const [rating, setRating] = useState("")
+  const [review, setReview] = useState("")
+  const addReview = async () => {
+    const res = await axios.post ("/review", {
+      rating: +rating,
+      review,
+      movie:props.movie.id
+    },{
+      headers:{
+        Authorization:localStorage.getItem("token")
+      }
+    })
+    console.log(res.data)
+  }
 
   return (
     <>
@@ -24,12 +38,12 @@ function AddReview(props) {
             </div>
 
             <div>
-                <input placeholder='rating'/>
-                <input placeholder='review'/>
+                <input value={rating} onChange={(e)=> setRating(e.target.value)} placeholder='rating'/>
+                <input value={review} onChange={(e)=> setReview(e.target.value)} placeholder='review'/>
             </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={props.handleClose}>
+          <Button variant="primary" onClick={addReview}>
             Submit
           </Button>
           <Button variant="default" onClick={props.handleClose}>
