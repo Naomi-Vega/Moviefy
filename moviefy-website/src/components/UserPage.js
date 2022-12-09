@@ -45,8 +45,8 @@ const navigate = useNavigate()
 }    
 
     useEffect(() => {
-        if (!contextData.user){
-            navigate("/signin")
+        if (!contextData.user){ /*
+            navigate("/signin") */
         }
     }, [])
 
@@ -70,7 +70,7 @@ const navigate = useNavigate()
 
             <div className="explore-area">
                 
-            <Movie openReview={handleShow} watched={contextData.status=="watched"} movies={contextData.status=="favorites"?contextData.user.favorites:contextData.status=="toWatch"?contextData.user.toWatch:contextData.status=="watched"?contextData.user.watched:[]} />                    
+              <Movie openReview={handleShow} watched={contextData.status=="watched"} movies={contextData.status=="favorites"?contextData/*.user*/.favorites:contextData.status=="toWatch"?contextData/*.user*/.toWatch:contextData.status=="watched"?contextData/*.user*/.watched:[]} />                    
                     
               
                

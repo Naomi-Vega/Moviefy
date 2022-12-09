@@ -1,13 +1,13 @@
 import React from "react";
 import logo from "./images/moviefy-01.png";
-import "../components/Navbar.css"
 import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "../AppContext";
+import "../styles/Navbar.css"
 
 
-export const Navbar = (props) => {
+export const Navbar = (/*props*/) => {
     const navigate = useNavigate()
-    const contextData = useAppContext()
+  /*  const contextData = useAppContext() */
 
     return (
         <div className="header-header">
@@ -21,19 +21,24 @@ export const Navbar = (props) => {
                             <li>
                                 <Link to="/explore">Explore</Link>
                             </li>
-                            {contextData.user && <li>
-                                <Link to="/user">{contextData.user.name}'s Page</Link>
-                            </li>}
+                            <li>
+                                <Link to="/user">Usertest</Link>
+                            </li>
+                          {/*   { contextData.user && */}
+                           <li>
+                                <Link to="/user"> {/*{contextData.user.name}'s*/} Page</Link>
+                            </li> {/*} */}
                         </ul>
                     </nav>
-                    {!contextData.user && <button className="sign-in" onClick={() => {
-                        props.setShowSignIn(true)
-                    }}>Sign in</button>}
+                 {/*   {!contextData.user && */}<button className="sign-in" /* onClick={() => {
+                        props.setShowSignIn(true) 
+                    }} */ >Sign in</button> {/*}*/}
+                    {/*
                     {contextData.user && <button className="sign-in" onClick={()=>{
                     localStorage.removeItem("token")
                     contextData.setUser(null)
                     navigate("/")
-                    }}>Log Out</button>}
+                    }}>Log Out</button>}  */}
 
                 </div>
             </div>

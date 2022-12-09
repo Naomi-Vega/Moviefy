@@ -9,6 +9,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+
+/*
 app.post ("/register", async (req, res) =>{
     const emailExist = await userModel.findOne({email:req.body.email})
     if (emailExist){
@@ -54,7 +56,7 @@ app.get ("/currentUser", async (req, res) => {
         res.status(500).json("You're not signed in")
     }
 })
-
+*/
 app.post ("/favorite", async (req, res) => {
     const token = req.get("Authorization")
     try {
