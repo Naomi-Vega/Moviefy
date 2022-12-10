@@ -1,6 +1,5 @@
 import React from 'react';
 import "../components/ExplorePage.css"
-import { FaEye, FaAngleDoubleRight, FaStar } from "react-icons/fa";
 import { useAppContext } from '../AppContext';
 import { useNavigate } from 'react-router-dom';
 
