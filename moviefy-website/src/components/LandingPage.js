@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 
 import "../components/LandingPage.css"
@@ -13,12 +13,19 @@ function LandingPage() {
         const [name, setName] = useState("")
         const [email, setEmail] = useState("")
         const [password, setPassword] = useState("")
+        const [showSignIn, setShowSignIn] = useState(false)
         const contextData = useAppContext()
         const navigate = useNavigate()
 
+        useEffect(() => {
+            if (contextData.user){
+                navigate("/explore")
+            }
+        }, [])
+
     return (
         <>
-            <Navbar />
+            <Navbar setShowSignIn = {setShowSignIn}/>
             <div className="landing-container">
                 <div className="home-page-left">
                     <h1>Welcome to Moviefy</h1>
@@ -29,7 +36,7 @@ function LandingPage() {
                     <div className="register">
                         <p><strong>Register now!</strong> To begin your Moviefy experience</p>
                     </div>
-                    <form className="login-section" onSubmit={async (e) => {
+                    {!showSignIn && <form className="login-section" onSubmit={async (e) => {
                     e.preventDefault()
                     var user = {
                         name, email, password
@@ -62,7 +69,31 @@ function LandingPage() {
 
                             <h4>By clicking the Submit button, you agree to our <a href='https://ciccc.ca/policy/prior-learning-assessment-policy/'>Terms & Conditions</a> and <a href='https://ciccc.ca/policy/admission-policy/'>Privacy Policy</a></h4>
                         </div>
-                    </form>
+                    </form>}
+
+                        {showSignIn && <form className="sign-in-section" onSubmit={async (e) => {
+                    e.preventDefault()
+                    var user = {
+                        email, password
+                    }
+                    const res = await axios.post ("/signin", user)
+                    console.log(res.data)
+                    localStorage.setItem("token", res.data.token)
+                    contextData.setUser(res.data.user)
+                    navigate("/explore")
+                }}>
+                    <label for="email"><FaUserAlt /> Email</label>
+                    <input type="email" placeholder="Enter email" value={email} onChange={(e) => {
+                            setEmail(e.target.value)
+                        }}/>
+                    <label for="password"><FaLock /> Password</label>
+                    <input type="password" placeholder="Enter Password" value={password} onChange={(e) => {
+                            setPassword(e.target.value)
+                        }}/>
+                    <button className="submit" type="submit">Submit</button>
+                    <p>Don't have an account? <span onClick={() => setShowSignIn(false)}>Register here</span></p>
+                </form>}
+
                 </div>
             </div>
         </>

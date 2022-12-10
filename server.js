@@ -3,7 +3,7 @@ const mongoose = require ("mongoose")
 const userModel = require ("./models/user-model")
 const cors = require ("cors")
 const jwt = require ("jsonwebtoken")
-
+const reviewModel = require ("./models/review-model")
 const app = express()
 
 app.use(express.json())
@@ -50,6 +50,98 @@ app.get ("/currentUser", async (req, res) => {
         const userData = jwt.verify(token, "Naomi")
         const user = await userModel.findById(userData.userId)
         res.json(user)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
+app.post ("/favorite", async (req, res) => {
+    const token = req.get("Authorization")
+    try {
+        const userData = jwt.verify(token, "Naomi")
+        const user = await userModel.findById(userData.userId)
+        const favoriteExist = user.favorites.find((movie)=> {
+            if (movie.id == req.body.id) return (true)
+        })
+        if (favoriteExist) {
+            res.status(500).json("Movie already on Favorites")
+            return 
+        }
+        if (!favoriteExist) {
+            user.favorites.push(req.body)
+        }
+        await user.save()
+        res.json(user)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
+app.post ("/toWatch", async (req, res) => {
+    const token = req.get("Authorization")
+    try {
+        const userData = jwt.verify(token, "Naomi")
+        const user = await userModel.findById(userData.userId)
+        const toWatchExist = user.toWatch.find((movie)=> {
+            if (movie.id == req.body.id) return (true)
+        })
+        if (toWatchExist) {
+            res.status(500).json("Movie already on to watch")
+            return 
+        }
+        if (!toWatchExist) {
+            user.toWatch.push(req.body)
+        }
+        await user.save()
+        res.json(user)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
+app.post ("/watched", async (req, res) => {
+    const token = req.get("Authorization")
+    try {
+        const userData = jwt.verify(token, "Naomi")
+        const user = await userModel.findById(userData.userId)
+        const watchedExist = user.watched.find((movie)=> {
+            if (movie.id == req.body.id) return (true)
+        })
+        if (watchedExist) {
+            res.status(500).json("Movie already on Watched")
+            return 
+        }
+        if (!watchedExist) {
+            user.watchedExist.push(req.body)
+        }
+        await user.save()
+        res.json(user)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
+app.post ("/review", async (req, res) => {
+    const token = req.get("Authorization")
+    try {
+        const userData = jwt.verify(token, "Naomi")
+        const review = new reviewModel({
+            rating: req.body.rating,
+            review: req.body.review,
+            movie: req.body.movie,
+            user: userData.userId
+        })
+        await review.save()
+        res.json(review)
+    } catch (error) {
+        res.status(500).json("You're not signed in")
+    }
+})
+
+app.get ("/review/:movie", async (req, res) => {
+    try {
+        const reviews = await reviewModel.find({movie:req.params.movie}).populate("user")
+        res.json(reviews)
     } catch (error) {
         res.status(500).json("You're not signed in")
     }
