@@ -18,8 +18,8 @@ const Movie = (props) => {
                         <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} alt="movie"></img>
 
                         <div className='movie-overlay'>
-                            <p>{movie.title}</p>
-                        <p>{movie.release_date}</p>
+                            {/* <p>{movie.title}</p>
+                        <p>{movie.release_date}</p> */}
                         {/* <p className='movie-container-overview'>{movie.overview}</p> */}
                             {/* <button className='watched-btn' onClick={() => {
                                 contextData.addWatched(movie)

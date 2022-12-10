@@ -60,7 +60,16 @@ app.post ("/favorite", async (req, res) => {
     try {
         const userData = jwt.verify(token, "Naomi")
         const user = await userModel.findById(userData.userId)
-        user.favorites.push(req.body)
+        const favoriteExist = user.favorites.find((movie)=> {
+            if (movie.id == req.body.id) return (true)
+        })
+        if (favoriteExist) {
+            res.status(500).json("Movie already on Favorites")
+            return 
+        }
+        if (!favoriteExist) {
+            user.favorites.push(req.body)
+        }
         await user.save()
         res.json(user)
     } catch (error) {
@@ -73,7 +82,16 @@ app.post ("/toWatch", async (req, res) => {
     try {
         const userData = jwt.verify(token, "Naomi")
         const user = await userModel.findById(userData.userId)
-        user.toWatch.push(req.body)
+        const toWatchExist = user.toWatch.find((movie)=> {
+            if (movie.id == req.body.id) return (true)
+        })
+        if (toWatchExist) {
+            res.status(500).json("Movie already on to watch")
+            return 
+        }
+        if (!toWatchExist) {
+            user.toWatch.push(req.body)
+        }
         await user.save()
         res.json(user)
     } catch (error) {
@@ -86,7 +104,16 @@ app.post ("/watched", async (req, res) => {
     try {
         const userData = jwt.verify(token, "Naomi")
         const user = await userModel.findById(userData.userId)
-        user.watched.push(req.body)
+        const watchedExist = user.watched.find((movie)=> {
+            if (movie.id == req.body.id) return (true)
+        })
+        if (watchedExist) {
+            res.status(500).json("Movie already on Watched")
+            return 
+        }
+        if (!watchedExist) {
+            user.watchedExist.push(req.body)
+        }
         await user.save()
         res.json(user)
     } catch (error) {
@@ -112,10 +139,8 @@ app.post ("/review", async (req, res) => {
 })
 
 app.get ("/review/:movie", async (req, res) => {
-    
     try {
-        
-        const reviews = await reviewModel.find({movie:req.params.movie})
+        const reviews = await reviewModel.find({movie:req.params.movie}).populate("user")
         res.json(reviews)
     } catch (error) {
         res.status(500).json("You're not signed in")

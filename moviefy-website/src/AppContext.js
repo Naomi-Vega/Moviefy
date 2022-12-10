@@ -20,37 +20,51 @@ export const AppContextProvider = (props) => {
     const addFavorite = async (movie) =>{
         setFavorites([...favorites, movie])
         localStorage.setItem("favorites", JSON.stringify([...favorites, movie]))
-        const res = await axios.post("/favorite", movie, {
-            headers:{
-                Authorization:localStorage.getItem("token")
-              }
-        })
-        console.log(res.data)
-        setUser(res.data)
+        try {
+            const res = await axios.post("/favorite", movie, {
+                headers:{
+                    Authorization:localStorage.getItem("token")
+                  }
+            })
+            console.log(res.data)
+            setUser(res.data)
+        } catch (error) {
+            alert(error.response.data)
+        }
+        
     }
 
     const addToWatch = async (movie) =>{
         setToWatch([...toWatch, movie])
         localStorage.setItem("toWatch", JSON.stringify([...toWatch, movie]))
-        const res = await axios.post("/toWatch", movie, {
-            headers:{
-                Authorization:localStorage.getItem("token")
-              }
-        })
-        console.log(res.data)
-        setUser(res.data)
+        try {
+            const res = await axios.post("/toWatch", movie, {
+                headers:{
+                    Authorization:localStorage.getItem("token")
+                  }
+            })
+            console.log(res.data)
+            setUser(res.data)
+        } catch (error) {
+            alert(error.response.data)
+        }
+    
     }
 
     const addWatched = async (movie) =>{
         setWatched([...watched, movie])
         localStorage.setItem("watched", JSON.stringify([...watched, movie]))
-        const res = await axios.post("/watched", movie, {
-            headers:{
-                Authorization:localStorage.getItem("token")
-              }
-        })
-        console.log(res.data)
-        setUser(res.data)
+        try {
+            const res = await axios.post("/watched", movie, {
+                headers:{
+                    Authorization:localStorage.getItem("token")
+                  }
+            })
+            console.log(res.data)
+            setUser(res.data)
+        } catch (error) {
+            alert(error.response.data)
+        }
     }
 
     const value = {
