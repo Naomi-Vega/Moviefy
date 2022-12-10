@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { AppContextProvider } from './AppContext';
-axios.defaults.baseURL = "http://localhost:5000"
+axios.defaults.baseURL = "https://moviefy.onrender.com"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
