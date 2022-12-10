@@ -149,7 +149,7 @@ app.get ("/review/:movie", async (req, res) => {
 
 async function startServer (){
     await mongoose.connect("mongodb+srv://NaomiVega:Naomi123@cluster0.c62ouri.mongodb.net/Moviefy?retryWrites=true&w=majority")
-    app.listen(5000, () => {
+    app.listen(process.env.PORT || 5000, () => {
         console.log ("server is running")
     })
 }
