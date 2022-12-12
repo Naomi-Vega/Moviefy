@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Movie from "./Movie";
 import "../components/UserPage.css";
-import "../styles/movieCard"
 import SearchBox from "./SearchBox";
 import ExplorePage from "./ExplorePage";
 import AddFavourites from "./AddFavourites";

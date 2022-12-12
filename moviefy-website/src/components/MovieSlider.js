@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import React, { useRef } from 'react';
-import "../components/ExplorePage.css"
+import "../styles/movieCard.css"
 import { FaEye, FaAngleDoubleRight, FaStar } from "react-icons/fa";
 import { useAppContext } from '../AppContext';
 import { Navigation } from 'swiper';
@@ -26,6 +26,8 @@ const MovieSlider = (props) => {
                         <div className='image-container slider-image-container'>
                             <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} alt="movie"></img>
                             <div className='movie-overlay'>
+                            <p>ola</p>
+                        <p>{movie.release_date}</p>
                                 <button className='watched-btn' onClick={() => {
                                     contextData.addWatched(movie)
                                 }}><FaEye /></button>

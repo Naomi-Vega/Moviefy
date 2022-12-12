@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Movie from "./Movie";
-import "../components/ExplorePage.css";
+
+import "../styles/Explore.css"
 import SearchBox from "./SearchBox";
 import Navbar from "./NavBar";
 import MovieSlider from "./MovieSlider";

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,0BAA0B;EAC5C,WAAW,EAAE,oBAAoB;CACpC",
+    "sources": [
+        "Explore.scss"
+    ],
+    "names": [],
+    "file": "Explore.css"
+}
