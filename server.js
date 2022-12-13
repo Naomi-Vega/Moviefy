@@ -73,7 +73,7 @@ app.post ("/favorite", async (req, res) => {
         await user.save()
         res.json(user)
     } catch (error) {
-        res.status(500).json("You're not signed in")
+        res.status(500).json("Register or sign in to add movie on Favorites list")
     }
 })
 
@@ -95,7 +95,7 @@ app.post ("/toWatch", async (req, res) => {
         await user.save()
         res.json(user)
     } catch (error) {
-        res.status(500).json("You're not signed in")
+        res.status(500).json("Register or sign in to add movie on to Watch list")
     }
 })
 
@@ -117,7 +117,7 @@ app.post ("/watched", async (req, res) => {
         await user.save()
         res.json(user)
     } catch (error) {
-        res.status(500).json("You're not signed in")
+        res.status(500).json("Register or sign in to add movie on Watched list")
     }
 })
 
@@ -143,7 +143,7 @@ app.get ("/review/:movie", async (req, res) => {
         const reviews = await reviewModel.find({movie:req.params.movie}).populate("user")
         res.json(reviews)
     } catch (error) {
-        res.status(500).json("You're not signed in")
+        res.status(500).json("Register or sign in to review this movie")
     }
 })
 
