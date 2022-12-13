@@ -1,0 +1,145 @@
+.movie-container img {
+    width: 185px;
+    height: auto;
+    display: block;
+
+}
+
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px
+}
+
+.image-container {
+    width: 225px;
+}
+
+.movie-container {
+    width: 200px;
+    
+    background-color: rgba(241, 241, 241, 0.884);
+ 
+    }
+    /* width: 17rem; */
+
+
+.movie-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+   /*  bottom: 0;
+    left: 0; */
+    right: 0;
+  display: flex; 
+  display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.slider-image-container {
+    position: relative;
+}
+
+.slider-image-container:hover .movie-overlay {
+    display: flex;
+}
+
+.searchbox-explore {
+    padding-top: 5rem;
+}
+
+.yyy {
+    background-color: black;
+}
+
+.explore-area h1{
+    color: white;
+    font-size: 25px;
+}
+
+.watched-btn {
+    margin: 0px 0px 0px 0px;
+border-width: 1px;  border-color: white;
+  color: white; /* White text */
+  font-size: 15px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 110px;
+  padding: 12px 16px; /* Some padding */
+}
+
+.watched-btn:hover {
+    background-color: RoyalBlue;
+    border: none;
+}
+
+.towatch-btn {
+    margin: 0px 0px 0px 0px;
+    border-width: 1px;  border-color: white;
+    color: white; /* White text */
+  font-size: 15px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 100px;
+  padding: 12px 16px; /* Some padding */
+}
+
+.towatch-btn:hover {
+    background-color: rgb(53, 180, 14);
+    border: none;
+}
+
+.fav-btn {
+    margin: 0px 0px 0px 0px;
+    border-width: 1px;  border-color: white;
+  color: white; /* White text */
+  font-size: 20px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 100px;
+  padding: 12px 16px; /* Some padding */
+
+}
+.fav-btn:hover {
+    border: none;
+    background-color: rgb(221, 182, 8);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: white!important;
+   
+    
+    
+    
+}
+
+.navigation {
+    background-color: azure;
+}
+
+
+
+.swiper {
+    padding-left: 50px!important;
+    padding-right: 50px!important;
+}
+
+
+
+.movie-text {
+  
+    
+    color: white;
+    
+}
+
+.movietitle {
+    font-size: 30px;
+}
+
+.overlay-card {
+    margin: 10px 10px 10px 30px;
+}
