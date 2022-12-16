@@ -6,10 +6,8 @@
 }
 
 .movies-container {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -31,10 +29,8 @@
   height: 100%;
   top: 0;
   /*  bottom: 0;
-    left: 0; */
+   left: 0; */
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   display: none;
   background-color: rgba(0, 0, 0, 0.8);
@@ -42,17 +38,13 @@
 }
 
 .card-btn {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
 
 .card-title {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
   font-size: 22px;
-  color: #c9c9c9;
+  color: rgb(201, 201, 201);
   padding-top: 30px;
 }
 
@@ -61,17 +53,11 @@
 }
 
 .slider-image-container:hover .movie-overlay {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .searchbox-explore {
   padding-top: 5rem;
-}
-
-.yyy {
-  background-color: black;
 }
 
 .explore-area h1 {
@@ -89,18 +75,13 @@
 
 .watched-btn {
   margin: 0px 0px 0px 0px;
-  background-color: DodgerBlue;
-  /* Blue background */
+  background-color: DodgerBlue; /* Blue background */
   border: none;
-  color: white;
-  /* White text */
-  font-size: 15px;
-  /* Set a font size */
-  cursor: pointer;
-  /* Mouse pointer on hover */
+  color: white; /* White text */
+  font-size: 15px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
   border-radius: 110px;
-  padding: 12px 16px;
-  /* Some padding */
+  padding: 12px 16px; /* Some padding */
 }
 
 .watched-btn:hover {
@@ -112,21 +93,16 @@
   margin: 0px 5px 0px 5px;
   border-width: 1px;
   border: none;
-  background-color: #32d600;
-  /* Blue background */
-  color: white;
-  /* White text */
-  font-size: 15px;
-  /* Set a font size */
-  cursor: pointer;
-  /* Mouse pointer on hover */
+  background-color: rgb(50, 214, 0); /* Blue background */
+  color: white; /* White text */
+  font-size: 15px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
   border-radius: 100px;
-  padding: 12px 16px;
-  /* Some padding */
+  padding: 12px 16px; /* Some padding */
 }
 
 .towatch-btn:hover {
-  background-color: #35b40e;
+  background-color: rgb(53, 180, 14);
   border: none;
 }
 
@@ -134,22 +110,17 @@
   margin: 0px 0px 0px 0px;
   border-width: 1px;
   border: none;
-  background-color: #ffd417;
-  /* Blue background */
-  color: white;
-  /* White text */
-  font-size: 15px;
-  /* Set a font size */
-  cursor: pointer;
-  /* Mouse pointer on hover */
+  background-color: rgb(255, 212, 23); /* Blue background */
+  color: white; /* White text */
+  font-size: 15px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
   border-radius: 100px;
-  padding: 12px 16px;
-  /* Some padding */
+  padding: 12px 16px; /* Some padding */
 }
 
 .fav-btn:hover {
   border: none;
-  background-color: #ddb608;
+  background-color: rgb(221, 182, 8);
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -180,5 +151,4 @@
 
 .overlay-content {
   margin: 5px;
-}
-/*# sourceMappingURL=movieCard.css.map */
+}/*# sourceMappingURL=movieCard.css.map */
