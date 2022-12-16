@@ -41,6 +41,7 @@ body {
 
 .slider-image-container:hover .movie-overlay {
     display: flex;
+    flex-direction: column;
 }
 
 .searchbox-explore {
@@ -57,14 +58,14 @@ body {
     font-size: 25px;
 }
 
-.watched-btn {
-    margin: 0px 10px 0px 10px;
-    background-color: DodgerBlue; /* Blue background */
+.movie-buttons .watched-btn {
+    /* margin: 0px 10px 0px 10px; */
+    background-color: rgba(252, 253, 251, 0.623); /* Blue background */
   border: none; /* Remove borders */
-  color: white; /* White text */
-  font-size: 20px; /* Set a font size */
+  color: black; /* White text */
+  font-size: 18px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
-  border-radius: 100px;
+  border-radius: 80%;
   padding: 12px 16px; /* Some padding */
 }
 
@@ -72,14 +73,14 @@ body {
     background-color: RoyalBlue;
 }
 
-.towatch-btn {
-    margin: 0px 10px 0px 10px;
-    background-color: rgb(50, 214, 0); /* Blue background */
+.movie-buttons .towatch-btn {
+    margin: 0px 10px 10px 10px;
+    background-color: rgba(252, 253, 251, 0.623); /* Blue background */
   border: none; /* Remove borders */
-  color: white; /* White text */
-  font-size: 20px; /* Set a font size */
+  color: black; /* White text */
+  font-size: 18px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
-  border-radius: 100px;
+  border-radius: 80%;
   padding: 12px 16px; /* Some padding */
 }
 
@@ -87,18 +88,33 @@ body {
     background-color: rgb(53, 180, 14);
 }
 
-.fav-btn {
-    margin: 0px 10px 0px 10px;
-    background-color: rgb(255, 212, 23); /* Blue background */
+.movie-buttons .fav-btn {
+    /* margin: 0px 10px 0px 10px; */
+    background-color: rgba(252, 253, 251, 0.623); /* Blue background */
   border: none; /* Remove borders */
-  color: white; /* White text */
-  font-size: 20px; /* Set a font size */
+  color: black; /* White text */
+  font-size: 18px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
-  border-radius: 100px;
+  border-radius: 80%;
+  padding: 12px 16px; /* Some padding */
+  margin-bottom: 20px;
+}
+.fav-btn:hover {
+    background-color: rgb(221, 8, 150)!important;
+}
+
+.movie-buttons .rate-btn {
+    /* margin: 0px 10px 0px 10px; */
+    background-color: rgba(252, 253, 251, 0.623); /* Blue background */
+  border: none; /* Remove borders */
+  color: black; /* White text */
+  font-size: 18px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 80%;
   padding: 12px 16px; /* Some padding */
 
 }
-.fav-btn:hover {
+.rate-btn:hover {
     background-color: rgb(221, 182, 8);
 }
 
@@ -109,4 +125,13 @@ body {
 .swiper {
     padding-left: 50px!important;
     padding-right: 50px!important;
+}
+
+.user-buttons {
+    display: flex;
+    margin: 10px 0 10px 0;
+}
+
+.slider-details-button {
+    display: flex;
 }

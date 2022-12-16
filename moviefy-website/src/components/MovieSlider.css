@@ -1,0 +1,9 @@
+.slider-buttons {
+    display: flex;
+    margin: 10px 0 10px 0;
+}
+
+.slider-details-button {
+    display: flex;
+}
+

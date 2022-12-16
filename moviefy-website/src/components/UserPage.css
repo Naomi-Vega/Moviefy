@@ -104,10 +104,19 @@ input[type=text]:focus {
   display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px
-  /*padding: 20px;*/
 }
 
-/* .movie-container-userpage .image-container {
-  height: 20rem;
-} */
+.user-review-button {
+  display: flex;
+  justify-content: center;
+}
 
+.user-review-button button {
+  margin-top: 6px;
+  background-color: rgba(133, 132, 132, 0.74);
+  color: black;
+}
+
+.user-review-button button:hover {
+  background-color: rgba(110, 110, 110, 0.836);
+}

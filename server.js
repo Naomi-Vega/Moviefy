@@ -95,28 +95,33 @@ app.post ("/toWatch", async (req, res) => {
         await user.save()
         res.json(user)
     } catch (error) {
-        res.status(500).json("Register or sign in to add movie on to Watch list")
+        res.status(500).json("Register or sign in to add movie on To Watch list")
     }
 })
 
 app.post ("/watched", async (req, res) => {
     const token = req.get("Authorization")
+
     try {
         const userData = jwt.verify(token, "Naomi")
+       
         const user = await userModel.findById(userData.userId)
+        console.log(user.watched)
         const watchedExist = user.watched.find((movie)=> {
             if (movie.id == req.body.id) return (true)
         })
+        
         if (watchedExist) {
             res.status(500).json("Movie already on Watched")
             return 
         }
         if (!watchedExist) {
-            user.watchedExist.push(req.body)
+            user.watched.push(req.body)
         }
         await user.save()
         res.json(user)
     } catch (error) {
+        console.log(error)
         res.status(500).json("Register or sign in to add movie on Watched list")
     }
 })

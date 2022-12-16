@@ -2,7 +2,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import "./MovieDetailPage.css"
-import { FaEye, FaAngleDoubleRight, FaStar } from "react-icons/fa";
+import "../components/ExplorePage.css"
+import { FaEye, FaAngleDoubleRight, FaStar, FaHeart } from "react-icons/fa";
 import { useAppContext } from "../AppContext";
 
 
@@ -15,10 +16,10 @@ const MovieDetailPage = () => {
 
     const getMovie = async () => {
         const res = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=ca776bbe7736cbc79b13f2bf8722288d`)
-        
+
         setMovie(res.data)
         const reviewres = await axios.get(`/review/${params.id}`)
-        
+
         setReviews(reviewres.data)
 
         const videores = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=ca776bbe7736cbc79b13f2bf8722288d`)
@@ -34,44 +35,59 @@ const MovieDetailPage = () => {
     }
 
     return <>
-    <div className="movie-detail-container">
-        <div>
-            <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} />
+        <div className="movie-detail-container">
+            <div className="movie-poster">
+                <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} />
+            </div>
+            <div>
+                <h3>{movie.title}</h3>
+                <div className="movie-detail-genre">
+                    <p>{movie.release_date}</p>
+                    {movie.genres.map((genre) => {
+                        return <p>{genre.name}</p>
+                    })}
+                </div>
+                <div className="movie-detail-icons">
+                    <div className="movie-detail-buttons">
+                        <button className='watched-btn' onClick={() => {
+                            contextData.addWatched(movie)
+                        }}><FaEye />
+                            <span className="tooltip-text">Watched</span>
+                        </button>
+                        <button className='towatch-btn' onClick={() => {
+                            contextData.addToWatch(movie)
+                        }}><FaAngleDoubleRight />
+                            <span className="tooltip-text">To Watch</span>
+                        </button>
+                        <button className='fav-btn' onClick={() => {
+                            contextData.addFavorite(movie)
+                        }}><FaHeart />
+                            <span className="tooltip-text">Favorites</span>
+                        </button>
+
+                    </div>
+                </div>
+                <div className="movie-detail-bottom">
+                    <p>{movie.tagline}</p>
+                    <h3>Overview</h3>
+                    <p>{movie.overview}</p>
+                </div>
+            </div>
+
         </div>
-        <div>
-            <h1>{movie.title}</h1>
-            <div className="movie-detail-genre">
-                <p>{movie.release_date}</p>
-                {movie.genres.map((genre) => {
-                    return <p>{genre.name}</p>
-                })}
-            </div>
-            <div className="movie-detail-icons">
-                <button className='watched-btn' onClick={() => {
-                    contextData.addWatched(movie)
-                }}><FaEye /></button>
-                <button className='towatch-btn' onClick={() => {
-                    contextData.addToWatch(movie)
-                }}><FaAngleDoubleRight /></button>
-                <button className='fav-btn' onClick={() => {
-                    contextData.addFavorite(movie)
-                }}><FaStar /></button>
-            </div>
-            <p>{movie.tagline}</p>
-            <h3>Overview</h3>
-            <p>{movie.overview}</p>
+        <div className="movie-detail-video">
+        <p>Watch the trailer!</p>
+        {video && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video.key}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}  
         </div>
         
-    </div>
-    {video && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video.key}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
-    {reviews.map((review) => {
-        console.log(review)
-        return <div>
-            <p>{review.user.name}</p>
-            <p>{review.rating}</p>
-            <p>{review.review}</p>
-        </div>
-    })}
+        {reviews.map((review) => {
+            console.log(review)
+            return <div className="movie-detail-review">
+                <h3>See our user reviews!</h3>
+                <p>{review.user.name}</p>
+                <p>{review.rating} - {review.review} </p>
+            </div>
+        })}
     </>
 }
 
