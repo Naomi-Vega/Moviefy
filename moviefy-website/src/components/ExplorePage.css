@@ -58,9 +58,9 @@ body {
     font-size: 25px;
 }
 
-.movie-buttons .watched-btn {
-    /* margin: 0px 10px 0px 10px; */
-    background-color: rgba(252, 253, 251, 0.623); /* Blue background */
+.watched-btn {
+    margin: 0px 5px 0px 5px;
+    background-color: DodgerBlue; /* Blue background */
   border: none; /* Remove borders */
   color: black; /* White text */
   font-size: 18px; /* Set a font size */
@@ -73,9 +73,9 @@ body {
     background-color: RoyalBlue;
 }
 
-.movie-buttons .towatch-btn {
-    margin: 0px 10px 10px 10px;
-    background-color: rgba(252, 253, 251, 0.623); /* Blue background */
+.towatch-btn {
+    margin: 0px 6px 0px 6px;
+    background-color: rgb(50, 214, 0); /* Blue background */
   border: none; /* Remove borders */
   color: black; /* White text */
   font-size: 18px; /* Set a font size */

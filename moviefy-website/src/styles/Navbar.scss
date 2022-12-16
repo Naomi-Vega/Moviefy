@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    
+   
+  }
+  
+  .header {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+
+    width: 100%;
+    padding: 1rem 6rem 0px 6rem;
+    height: 95px;
+    background: hsla(0, 0%, 0%, 0.89);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2; 
+   
+    
+  }
+
+
+
+ 
+  
+
+
+  .header img {
+    width: 13rem;
+    height: 2.4rem;
+    padding-top: 2px;
+    
+    
+  }
+
+  .logobox {
+    padding-top: .9rem;
+    padding-left: 20px;
+  }
+  
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  
+.right-nav {
+    display: flex;
+    justify-content: end;
+}
+
+.nav {
+    text-decoration: none;
+    font-family: 'Comfortaa', cursive;
+    color: rgb(197, 197, 197);
+    font-size: 1rem;
+    display: flex;
+
+ 
+}
+
+.nav-nav {
+    display: flex;
+    
+    margin-top: 1.2rem;
+list-style-type: none;
+    text-decoration: none;
+
+
+}
+
+
+
+li {
+    margin-right: 2.5rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+a:link {
+    text-decoration: none;
+    color: #fff;
+    
+}
+a:hover {
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+a {
+    color: rgb(180, 180, 180);
+    text-decoration: none;
+}
+
+a:active {
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+
+}
+
+
+
+
+.sign-in {
+  padding: 0.6em 2em;
+  font-family: 'Comfortaa', cursive;
+
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: rgb(160, 160, 160);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+
+.sign-in:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff00c8,
+    #7a00ff,
+    #00ffd5,
+    
+    #2b64b9,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  animation: sign-in 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes sign-in {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  } 
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.sign-in:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}

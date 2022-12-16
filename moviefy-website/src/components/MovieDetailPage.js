@@ -35,59 +35,53 @@ const MovieDetailPage = () => {
     }
 
     return <>
-        <div className="movie-detail-container">
-            <div className="movie-poster">
-                <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} />
+    <div className="movie-detail-container">
+        <div>
+            <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} />
+            <div className="movie-detail-icons">
+                <button className='watched-btn' onClick={() => {
+                    contextData.addWatched(movie)
+                }}><FaEye /></button>
+                <button className='towatch-btn' onClick={() => {
+                    contextData.addToWatch(movie)
+                }}><FaAngleDoubleRight /></button>
+                <button className='fav-btn' onClick={() => {
+                    contextData.addFavorite(movie)
+                }}><FaStar /></button>
+            </div>
+        </div>
+        <div>
+            <div className="detail-title">{movie.title}</div>
+            <div className="movie-detail-genre">
+                
+                {movie.genres.map((genre) => {
+                    return <p className="genre">{genre.name}</p>
+                })}
             </div>
             <div>
-                <h3>{movie.title}</h3>
-                <div className="movie-detail-genre">
-                    <p>{movie.release_date}</p>
-                    {movie.genres.map((genre) => {
-                        return <p>{genre.name}</p>
-                    })}
-                </div>
-                <div className="movie-detail-icons">
-                    <div className="movie-detail-buttons">
-                        <button className='watched-btn' onClick={() => {
-                            contextData.addWatched(movie)
-                        }}><FaEye />
-                            <span className="tooltip-text">Watched</span>
-                        </button>
-                        <button className='towatch-btn' onClick={() => {
-                            contextData.addToWatch(movie)
-                        }}><FaAngleDoubleRight />
-                            <span className="tooltip-text">To Watch</span>
-                        </button>
-                        <button className='fav-btn' onClick={() => {
-                            contextData.addFavorite(movie)
-                        }}><FaHeart />
-                            <span className="tooltip-text">Favorites</span>
-                        </button>
-
-                    </div>
-                </div>
-                <div className="movie-detail-bottom">
-                    <p>{movie.tagline}</p>
-                    <h3>Overview</h3>
-                    <p>{movie.overview}</p>
-                </div>
+            <p className="movie-rd">Released  {movie.release_date}</p>
             </div>
-
+   
+            <p>{movie.tagline}</p>
+            <div className="overview">
+            <h3>Overview</h3>
+            <p>{movie.overview}</p>
+            </div>
+            <div className="detail-vid">
+    {video && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video.key}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
+    {reviews.map((review) => {
+        console.log(review)
+        return <div>
+            <p>{review.user.name}</p>
+            <p>{review.rating}</p>
+            <p>{review.review}</p>
         </div>
-        <div className="movie-detail-video">
-        <p>Watch the trailer!</p>
-        {video && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video.key}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}  
+    })}
+    </div>
         </div>
         
-        {reviews.map((review) => {
-            console.log(review)
-            return <div className="movie-detail-review">
-                <h3>See our user reviews!</h3>
-                <p>{review.user.name}</p>
-                <p>{review.rating} - {review.review} </p>
-            </div>
-        })}
+    </div>
+    
     </>
 }
 
