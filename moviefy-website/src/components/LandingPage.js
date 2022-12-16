@@ -34,8 +34,13 @@ function LandingPage() {
                 </div>
                 <div className="home-page-right">
                     <div className="register">
-                        <p><strong>Register now!</strong> To begin your Moviefy experience</p>
+                        <p>Register to begin your Moviefy experience</p>
                     </div>
+
+
+                    <div className="fields">
+
+
                     {!showSignIn && <form className="login-section" onSubmit={async (e) => {
                     e.preventDefault()
                     var user = {
@@ -47,25 +52,40 @@ function LandingPage() {
                     contextData.setUser(res.data.user)
                     navigate("/explore")
                 }}>
-                        <label for="user-name"><p><FaUserAlt /> Name</p></label>
+                      <div className="name">
+                        <label for="user-name"><div><FaUserAlt /> Name</div></label>
                         <input type="text" name="username" value={name} onChange={(e) => {
                             setName(e.target.value)
                         }} required />
 
-                        <label for="email"><p><FaEnvelope /> Email</p></label>
+</div>
+
+
+<div className="name">
+                        <label for="email"><div><FaEnvelope /> Email</div></label>
                         <input type="text" name="user-email" pattern=".+@gmail\.com" value={email} onChange={(e) => {
                             setEmail(e.target.value)
                         }} required />
+                        </div>
 
-                        <label for="password"><p><FaLock /> Password</p></label>
+
+
+<div className="name">
+                        <label for="password"><div><FaLock /> Password</div></label>
                         <input type="password" name="user-password" value={password} onChange={(e) => {
                             setPassword(e.target.value)
                         }} required />
+                        </div>
 
-                        <label for="confirm-password"><p><FaLock /> Confirm Password</p></label>
+
+<div className="name">
+                        <label for="confirm-password"><div><FaLock /> Confirm Password</div></label>
                         <input type="password" name="confirm-pword" required />
+                        </div>
                         <div className='login-bottom'>
+                            <div className="submit-btn">
                             <button className="submit" type="submit">Submit</button>
+                            </div>
 
                             <h4>By clicking the Submit button, you agree to our <a href='https://ciccc.ca/policy/prior-learning-assessment-policy/'>Terms & Conditions</a> and <a href='https://ciccc.ca/policy/admission-policy/'>Privacy Policy</a></h4>
                         </div>
@@ -82,17 +102,22 @@ function LandingPage() {
                     contextData.setUser(res.data.user)
                     navigate("/explore")
                 }}>
+                    <div className="signin-field">
                     <label for="email"><FaUserAlt /> Email</label>
                     <input type="email" placeholder="Enter email" value={email} onChange={(e) => {
                             setEmail(e.target.value)
                         }}/>
+                        </div>
+                        <div className="signin-field">
                     <label for="password"><FaLock /> Password</label>
                     <input type="password" placeholder="Enter Password" value={password} onChange={(e) => {
                             setPassword(e.target.value)
                         }}/>
+                        </div>
                     <button className="submit" type="submit">Submit</button>
                     <p>Don't have an account? <span onClick={() => setShowSignIn(false)}>Register here</span></p>
                 </form>}
+                </div>
 
                 </div>
             </div>

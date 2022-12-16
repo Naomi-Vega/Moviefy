@@ -10,7 +10,7 @@ body {
   width: 100%;
   padding: 1rem 6rem 0px 6rem;
   height: 95px;
-  background: #000000da;
+  background: rgba(0, 0, 0, 0.89);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,10 +23,12 @@ body {
 .header img {
   width: 13rem;
   height: 2.4rem;
+  padding-top: 2px;
 }
 
 .logobox {
-  padding-top: .3rem;
+  padding-top: .9rem;
+  padding-left: 20px;
 }
 
 * {

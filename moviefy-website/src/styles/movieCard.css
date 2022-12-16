@@ -2,6 +2,7 @@
   width: 185px;
   height: auto;
   display: block;
+  border-radius: 12px;
 }
 
 .movies-container {
@@ -13,13 +14,13 @@
 }
 
 .image-container {
-  width: 225px;
+  width: 185px;
 }
 
 .movie-container {
   width: 200px;
   margin: 0px 10px 10px 10px;
-  background-color: rgba(241, 241, 241, 0.884);
+  background-color: rgba(0, 0, 0, 0.884);
 }
 
 /* width: 17rem; */
@@ -36,13 +37,19 @@
   display: flex;
   display: none;
   background-color: rgba(0, 0, 0, 0.8);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-align: center;
+}
+
+.card-btn {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.card-title {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .slider-image-container {
@@ -65,12 +72,21 @@
 
 .explore-area h1 {
   color: white;
-  margin-left: 30px;
-  font-size: 25px;
+  font-size: 26px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.details {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  color: azure;
 }
 
 .watched-btn {
   margin: 0px 0px 0px 0px;
+  background-color: DodgerBlue;
+  /* Blue background */
   border-width: 1px;
   border-color: white;
   color: white;
@@ -90,7 +106,7 @@
 }
 
 .towatch-btn {
-  margin: 0px 0px 0px 0px;
+  margin: 0px 9px 0px 9px;
   border-width: 1px;
   border-color: white;
   color: white;
@@ -115,7 +131,7 @@
   border-color: white;
   color: white;
   /* White text */
-  font-size: 20px;
+  font-size: 15px;
   /* Set a font size */
   cursor: pointer;
   /* Mouse pointer on hover */
