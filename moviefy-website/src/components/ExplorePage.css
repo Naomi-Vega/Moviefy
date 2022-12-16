@@ -7,7 +7,6 @@ body {
     height: 100%;
     width: 100%;
     display: block;
-
 }
 
 .movie-container .image-container {
@@ -15,10 +14,8 @@ body {
 }
 
 .movie-container {
-    /* margin: 20px 20px 20px 20px; */
     padding: 7px;
     background-color: rgba(241, 241, 241, 0.884);
-    /* width: 17rem; */
 }
 
 .movie-overlay {
@@ -26,8 +23,6 @@ body {
     width: 100%;
     height: 100%;
     top: 0;
-   /*  bottom: 0;
-    left: 0; */
     right: 0;
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
@@ -58,64 +53,48 @@ body {
     font-size: 25px;
 }
 
-.watched-btn {
-    margin: 0px 5px 0px 5px;
-    background-color: DodgerBlue; /* Blue background */
-  border: none; /* Remove borders */
-  color: black; /* White text */
-  font-size: 18px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
-  border-radius: 80%;
-  padding: 12px 16px; /* Some padding */
-}
+.movie-buttons .watched-btn {
+    background-color: rgba(252, 253, 251, 0.623); 
+    border: none; 
+    color: black; 
+    font-size: 18px; 
+    cursor: pointer; 
+    border-radius: 80%;
+    padding: 12px 16px; 
+  }
 
 .watched-btn:hover {
     background-color: RoyalBlue;
 }
 
-.towatch-btn {
-    margin: 0px 6px 0px 6px;
-    background-color: rgb(50, 214, 0); /* Blue background */
-  border: none; /* Remove borders */
-  color: black; /* White text */
-  font-size: 18px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+.movie-buttons .towatch-btn {
+    margin: 0px 10px 10px 10px;
+    background-color: rgba(252, 253, 251, 0.623); 
+  border: none; 
+  color: black; 
+  font-size: 18px; 
+  cursor: pointer; 
   border-radius: 80%;
-  padding: 12px 16px; /* Some padding */
+  padding: 12px 16px; 
 }
 
 .towatch-btn:hover {
     background-color: rgb(53, 180, 14);
 }
 
-.movie-buttons .fav-btn {
-    /* margin: 0px 10px 0px 10px; */
-    background-color: rgba(252, 253, 251, 0.623); /* Blue background */
-  border: none; /* Remove borders */
-  color: black; /* White text */
-  font-size: 18px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+.movie-buttons .fav-btn { 
+    background-color: rgba(252, 253, 251, 0.623); 
+  border: none; 
+  color: black; 
+  font-size: 18px; 
+  cursor: pointer; 
   border-radius: 80%;
-  padding: 12px 16px; /* Some padding */
+  padding: 12px 16px; 
   margin-bottom: 20px;
 }
+
 .fav-btn:hover {
     background-color: rgb(221, 8, 150)!important;
-}
-
-.movie-buttons .rate-btn {
-    /* margin: 0px 10px 0px 10px; */
-    background-color: rgba(252, 253, 251, 0.623); /* Blue background */
-  border: none; /* Remove borders */
-  color: black; /* White text */
-  font-size: 18px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
-  border-radius: 80%;
-  padding: 12px 16px; /* Some padding */
-
-}
-.rate-btn:hover {
-    background-color: rgb(221, 182, 8);
 }
 
 .swiper-button-next, .swiper-button-prev {

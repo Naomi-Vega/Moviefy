@@ -39,15 +39,24 @@ const MovieDetailPage = () => {
         <div>
             <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} />
             <div className="movie-detail-icons">
-                <button className='watched-btn' onClick={() => {
-                    contextData.addWatched(movie)
-                }}><FaEye /></button>
-                <button className='towatch-btn' onClick={() => {
-                    contextData.addToWatch(movie)
-                }}><FaAngleDoubleRight /></button>
-                <button className='fav-btn' onClick={() => {
-                    contextData.addFavorite(movie)
-                }}><FaStar /></button>
+            <div className="movie-detail-buttons">
+                        <button className='watched-btn' onClick={() => {
+                            contextData.addWatched(movie)
+                        }}><FaEye />
+                            <span className="tooltip-text">Watched</span>
+                        </button>
+                        <button className='towatch-btn' onClick={() => {
+                            contextData.addToWatch(movie)
+                        }}><FaAngleDoubleRight />
+                            <span className="tooltip-text">To Watch</span>
+                        </button>
+                        <button className='fav-btn' onClick={() => {
+                            contextData.addFavorite(movie)
+                        }}><FaHeart />
+                            <span className="tooltip-text">Favorites</span>
+                        </button>
+
+                    </div>
             </div>
         </div>
         <div>
@@ -68,14 +77,16 @@ const MovieDetailPage = () => {
             <p>{movie.overview}</p>
             </div>
             <div className="detail-vid">
-    {video && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video.key}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
+            <p>Watch the trailer!</p>
+        {video && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video.key}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}  
+        
     {reviews.map((review) => {
         console.log(review)
-        return <div>
-            <p>{review.user.name}</p>
-            <p>{review.rating}</p>
-            <p>{review.review}</p>
-        </div>
+        return <div className="movie-detail-review">
+                <h3>See our user reviews!</h3>
+                <p>{review.user.name}</p>
+                <p>{review.rating} - {review.review} </p>
+            </div>
     })}
     </div>
         </div>

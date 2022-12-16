@@ -3,7 +3,6 @@ import Movie from "./Movie";
 import "../components/UserPage.css";
 import SearchBox from "./SearchBox";
 import ExplorePage from "./ExplorePage";
-import AddFavourites from "./AddFavourites";
 /* import Button from 'react-bootstrap' */
 import Navbar from "./NavBar";
 import { useAppContext } from "../AppContext";
@@ -13,28 +12,6 @@ import "../styles/movieCard.css"
 
 
 const UserPage = () => {
-    /* const [movies, setMovies] = useState([]);
-    const [searchValue, setSearchValue] = useState('');
-
-
-    const getMovieRequest = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263f7004`;
-
-    const response = await fetch(url);
-    const responseJson = await response.json();
-
-    if (responseJson.Search) {
-        setMovies(responseJson.Search);
-    }
-
-   
-   
-}; */
-
-/* useEffect(() => {
-    getMovieRequest(searchValue);
-}, [searchValue]); */
-
 const contextData = useAppContext()
 const [show, setShow] = useState(false);
 const [reviewMovie, setReviewMovie] = useState({})

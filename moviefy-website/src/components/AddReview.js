@@ -24,9 +24,6 @@ function AddReview(props) {
   return (
     <>
       <Modal close show={props.show} onHide={props.handleClose}>
-        {/* <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header> */}
         <Modal.Body> 
             <div className='pop-up'>
                 <img src={"https://image.tmdb.org/t/p/w185" + props.movie.poster_path}/>

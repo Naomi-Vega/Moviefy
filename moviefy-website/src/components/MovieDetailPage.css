@@ -49,12 +49,192 @@
     color: rgb(143, 143, 143);
 }
 
-.movie-detail-icons {
-    padding-top: 12px;
-    padding-left: 5px;
+/* TOOLTIP CSS */
+/* WATCHED */ 
+
+.movie-detail-buttons .watched-btn .tooltip-text {
+    visibility: hidden;
+    background-color: rgba(116, 116, 116, 0.877);
+    color: black;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    width: 80px;
+    top: 115%;
+    left: 90%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.towatch-btn {
-    margin-left: 15px;
-    margin-right: 15px;
+.movie-detail-buttons .watched-btn .tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(116, 116, 116, 0.877) transparent;
+}
+
+.movie-detail-buttons .watched-btn:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+ /* TO WATCH */
+
+ .movie-detail-buttons .towatch-btn .tooltip-text {
+    visibility: hidden;
+    background-color: rgba(116, 116, 116, 0.877);
+    color: black;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    width: 80px;
+    top: 115%;
+    left: 90%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.movie-detail-buttons .towatch-btn .tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(116, 116, 116, 0.877) transparent;
+}
+
+.movie-detail-buttons .towatch-btn:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* FAVORITES */
+
+.movie-detail-buttons .fav-btn .tooltip-text {
+    visibility: hidden;
+    background-color: rgba(116, 116, 116, 0.877);
+    color: black;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    width: 80px;
+    top: 115%;
+    left: 90%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.movie-detail-buttons .fav-btn .tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(116, 116, 116, 0.877) transparent;
+}
+
+.movie-detail-buttons .fav-btn:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* END OF TOOLTIP CSS */
+
+.movie-detail-buttons .watched-btn {
+    /* margin: 0px 10px 0px 10px; */
+    background-color: rgba(255, 255, 255, 0.897); /* Blue background */
+  border: none; /* Remove borders */
+  color: black; /* White text */
+  font-size: 18px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 80%;
+  padding: 12px 16px; /* Some padding */
+  margin: 5px 0 35px 0;
+}
+
+.watched-btn:hover {
+    background-color: RoyalBlue;
+}
+
+.movie-detail-buttons .towatch-btn {
+    margin: 0px 10px 10px 10px;
+    background-color: rgba(255, 255, 255, 0.897); /* Blue background */
+  border: none; /* Remove borders */
+  color: black; /* White text */
+  font-size: 18px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 80%;
+  padding: 12px 16px; /* Some padding */
+}
+
+.towatch-btn:hover {
+    background-color: rgb(53, 180, 14);
+}
+
+.movie-detail-buttons .fav-btn {
+    /* margin: 0px 10px 0px 10px; */
+    background-color: rgba(255, 255, 255, 0.897); /* Blue background */
+  border: none; /* Remove borders */
+  color: black; /* White text */
+  font-size: 18px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 80%;
+  padding: 12px 16px; /* Some padding */
+
+}
+.fav-btn:hover {
+    background-color: rgb(221, 182, 8);
+}
+
+.movie-detail-bottom h3 {
+    font-size: 25px;
+}
+
+.movie-detail-bottom p {
+    font-size: 15px;
+}
+
+.movie-detail-video p {
+    color: white;
+    font-size: 20px;
+}
+
+.movie-detail-video {
+    padding: 20px 0 10px 100px;
+}
+
+.movie-detail-review {
+    padding: 20px 0 10px 100px;
+    color: white;
+}
+
+.movie-detail-review h3 {
+    font-size: 20px;
+}
+
+.movie-detail-review p {
+  padding: 12px 8px 12px 40px;
+  width: 60%;
+  background-color: rgba(238, 238, 238, 0.171);
+  font-size: 18px;
+  color: black;
 }

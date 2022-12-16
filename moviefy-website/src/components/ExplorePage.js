@@ -66,7 +66,6 @@ const ExplorePage = () => {
         <>
             <Navbar />
             <div className="yyy">
-
                 <div className="searchbox-explore">
                     <SearchBox getSearchMovies={getSearchMovies} searchValue={searchValue} setSearchValue={setSearchValue} />
                 </div>
@@ -80,7 +79,6 @@ const ExplorePage = () => {
                     <MovieSlider movies={topRatedMovies} />                    
                     </>}
                     {searchMovies && <Movie movies={searchMovies} />}
-
                 </div>
             </div>
         </>
