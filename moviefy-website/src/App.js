@@ -8,7 +8,7 @@ import Navbar from './components/NavBar';
 import SignIn from './components/SignIn';
 import UserPage from './components/UserPage';
 import MovieDetailPage from './components/MovieDetailPage';
-
+import Footer from './components/Footer';
 function App() {
   const contextData = useAppContext()
   const [userLoading, setUserLoading] = useState(true)
@@ -45,6 +45,7 @@ function App() {
         <Route path='/user' element={<UserPage />} />
         <Route path='/movie/:id' element={<MovieDetailPage />} />
       </Routes>
+      
     </div>
   );
 }

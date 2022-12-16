@@ -27,10 +27,12 @@ function SignIn() {
                     contextData.setUser(res.data.user)
                     navigate("/explore")
                 }}>
+                    <div className="campo">
                     <label for="email"><FaUserAlt /> Email</label>
                     <input type="email" placeholder="Enter email" value={email} onChange={(e) => {
                             setEmail(e.target.value)
                         }}/>
+                        </div>
                     <label for="password"><FaLock /> Password</label>
                     <input type="password" placeholder="Enter Password" value={password} onChange={(e) => {
                             setPassword(e.target.value)

@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "./images/moviefy-01.png";
-import "../components/Navbar.css"
+import logo from "./images/moviefy.png";
+import "../styles/Navbar.css"
 import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "../AppContext";
 
@@ -26,6 +26,7 @@ export const Navbar = (props) => {
                             </li>}
                         </ul>
                     </nav>
+                    <Link to="/">
                     {!contextData.user && <button className="sign-in" onClick={() => {
                         props.setShowSignIn(true)
                     }}>Sign in</button>}
@@ -34,6 +35,7 @@ export const Navbar = (props) => {
                     contextData.setUser(null)
                     navigate("/")
                     }}>Log Out</button>}
+                    </Link>
 
                 </div>
             </div>

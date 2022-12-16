@@ -9,6 +9,8 @@ import Navbar from "./NavBar";
 import { useAppContext } from "../AppContext";
 import AddReview from "./AddReview";
 import { useNavigate } from "react-router-dom";
+import "../styles/movieCard.css"
+
 
 const UserPage = () => {
     /* const [movies, setMovies] = useState([]);

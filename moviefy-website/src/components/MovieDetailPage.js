@@ -37,15 +37,6 @@ const MovieDetailPage = () => {
     <div className="movie-detail-container">
         <div>
             <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} />
-        </div>
-        <div>
-            <h1>{movie.title}</h1>
-            <div className="movie-detail-genre">
-                <p>{movie.release_date}</p>
-                {movie.genres.map((genre) => {
-                    return <p>{genre.name}</p>
-                })}
-            </div>
             <div className="movie-detail-icons">
                 <button className='watched-btn' onClick={() => {
                     contextData.addWatched(movie)
@@ -57,12 +48,25 @@ const MovieDetailPage = () => {
                     contextData.addFavorite(movie)
                 }}><FaStar /></button>
             </div>
+        </div>
+        <div>
+            <div className="detail-title">{movie.title}</div>
+            <div className="movie-detail-genre">
+                
+                {movie.genres.map((genre) => {
+                    return <p className="genre">{genre.name}</p>
+                })}
+            </div>
+            <div>
+            <p className="movie-rd">Released  {movie.release_date}</p>
+            </div>
+   
             <p>{movie.tagline}</p>
+            <div className="overview">
             <h3>Overview</h3>
             <p>{movie.overview}</p>
-        </div>
-        
-    </div>
+            </div>
+            <div className="detail-vid">
     {video && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video.key}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
     {reviews.map((review) => {
         console.log(review)
@@ -72,6 +76,11 @@ const MovieDetailPage = () => {
             <p>{review.review}</p>
         </div>
     })}
+    </div>
+        </div>
+        
+    </div>
+    
     </>
 }
 

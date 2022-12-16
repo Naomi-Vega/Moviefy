@@ -14,10 +14,22 @@
 }
 
 .sign-in-section input {
-    background-color: rgb(169, 172, 169);
+    display: flex;
+    background-color: rgb(184, 184, 184);
     border: none;
-    border-radius: 30px;
-    padding: 10px;
-    width: 250px;
-    height: 25px;
+    color: rgb(0, 0, 0);
+    border-radius: 40px;
+    padding: 3px 0px 0px 20px;
+    width: 200px;
+    height: 30px;
+}
+
+.sign-in-section label {
+    padding-bottom: 2px;
+    padding-left: 13px;
+}
+
+
+.campo {
+    padding-bottom: 10px;
 }

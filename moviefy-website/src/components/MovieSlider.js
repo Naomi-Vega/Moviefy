@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import React, { useRef } from 'react';
-import "../components/ExplorePage.css"
+import "../styles/movieCard.css"
 import { FaEye, FaAngleDoubleRight, FaStar } from "react-icons/fa";
 import { useAppContext } from '../AppContext';
 import { Navigation } from 'swiper';
@@ -19,7 +19,7 @@ const MovieSlider = (props) => {
             navigation
             speed={600}
             loop 
-            spaceBetween={50}
+            spaceBetween={34}
             slidesPerView={5}
         >
             {props.movies.map((movie, index) => (
@@ -28,7 +28,15 @@ const MovieSlider = (props) => {
                         <div className='image-container slider-image-container'>
                             <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} alt="movie"></img>
                             <div className='movie-overlay'>
-                                {/* <div>
+                                <div className='overlay-content'>
+                            <div className='card-title'>{movie.title}</div>
+                                <div className='details'>
+                                <button onClick={()=> {
+                                    navigate(`/movie/${movie.id}`)
+                                }}>See details</button>
+                                </div>
+
+                                <div className='card-btn'>
                                 <button className='watched-btn' onClick={() => {
                                     contextData.addWatched(movie)
                                 }}><FaEye /></button>
@@ -38,10 +46,8 @@ const MovieSlider = (props) => {
                                 <button className='fav-btn' onClick={() => {
                                     contextData.addFavorite(movie)
                                 }}><FaStar /></button>
-                                </div> */}
-                                <button onClick={()=> {
-                                    navigate(`/movie/${movie.id}`)
-                                }}>See details</button>
+                                </div>
+                            </div>
                             </div>
 
                         </div>
