@@ -6,6 +6,9 @@
 
 }
 
+.yyy {
+    background-color: black;
+}
 
 .movies-container {
     display: grid;
@@ -18,11 +21,11 @@
 }
 
 .movie-container {
-    width: 185px;
-    height: 310px;
-	margin: 0px 10px 10px 10px;
+    /* width: 185px;
+    height: 310px;*/
+	margin: 0px 10px 10px 10px; 
     
-    background-color: rgba(0, 0, 0, 0.884);
+    background-color: black;
  
     }
     /* width: 17rem; */

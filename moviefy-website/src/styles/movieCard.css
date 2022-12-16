@@ -5,6 +5,10 @@
   border-radius: 12px;
 }
 
+.yyy {
+  background-color: black;
+}
+
 .movies-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -16,10 +20,10 @@
 }
 
 .movie-container {
-  width: 185px;
-  height: 310px;
+  /* width: 185px;
+  height: 310px;*/
   margin: 0px 10px 10px 10px;
-  background-color: rgba(0, 0, 0, 0.884);
+  background-color: black;
 }
 
 /* width: 17rem; */

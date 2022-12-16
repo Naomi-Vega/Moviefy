@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import React, { useRef } from 'react';
 import "../styles/movieCard.css"
-import { FaEye, FaAngleDoubleRight, FaStar } from "react-icons/fa";
+import { FaEye, FaAngleDoubleRight, FaHeart } from "react-icons/fa";
 import { useAppContext } from '../AppContext';
 import { Navigation } from 'swiper';
 import { useNavigate } from 'react-router-dom'
@@ -18,7 +18,7 @@ const MovieSlider = (props) => {
             modules={[Navigation]}
             navigation
             speed={600}
-            loop 
+            loop
             spaceBetween={34}
             slidesPerView={5}
         >
@@ -29,25 +29,25 @@ const MovieSlider = (props) => {
                             <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} alt="movie"></img>
                             <div className='movie-overlay'>
                                 <div className='overlay-content'>
-                            <div className='card-title'>{movie.title}</div>
-                                <div className='details'>
-                                <button onClick={()=> {
-                                    navigate(`/movie/${movie.id}`)
-                                }}>See details</button>
-                                </div>
+                                    <div className='card-title'>{movie.title}</div>
+                                    <div className='details'>
+                                        <button onClick={() => {
+                                            navigate(`/movie/${movie.id}`)
+                                        }}>See details</button>
+                                    </div>
 
-                                <div className='card-btn'>
-                                <button className='watched-btn' onClick={() => {
-                                    contextData.addWatched(movie)
-                                }}><FaEye /></button>
-                                <button className='towatch-btn' onClick={() => {
-                                    contextData.addToWatch(movie)
-                                }}><FaAngleDoubleRight /></button>
-                                <button className='fav-btn' onClick={() => {
-                                    contextData.addFavorite(movie)
-                                }}><FaStar /></button>
+                                    <div className='movie-buttons'>
+                                    <button className='watched-btn' onClick={() => {
+                                        contextData.addWatched(movie)
+                                    }}><FaEye /></button>
+                                    <button className='towatch-btn' onClick={() => {
+                                        contextData.addToWatch(movie)
+                                    }}><FaAngleDoubleRight /></button>
+                                    <button className='fav-btn' onClick={() => {
+                                        contextData.addFavorite(movie)
+                                    }}><FaHeart /></button>
                                 </div>
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>
