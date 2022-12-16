@@ -18,7 +18,8 @@
 }
 
 .movie-container {
-    width: 200px;
+    width: 185px;
+    height: 310px;
 	margin: 0px 10px 10px 10px;
     
     background-color: rgba(0, 0, 0, 0.884);
@@ -48,6 +49,9 @@
 
 .card-title {
     align-items: flex-start;
+    font-size: 22px;
+    color: rgb(201, 201, 201);
+    padding-top: 30px;
    
 }
 
@@ -86,7 +90,7 @@
     margin: 0px 0px 0px 0px;
     background-color: DodgerBlue; /* Blue background */
 
-border-width: 1px;  border-color: white;
+border: none;
   color: white; /* White text */
   font-size: 15px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
@@ -100,8 +104,10 @@ border-width: 1px;  border-color: white;
 }
 
 .towatch-btn {
-    margin: 0px 9px 0px 9px;
-    border-width: 1px;  border-color: white;
+    margin: 0px 5px 0px 5px;
+    border-width: 1px;  border: none;
+    background-color: rgb(50, 214, 0); /* Blue background */
+
     color: white; /* White text */
   font-size: 15px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
@@ -116,7 +122,9 @@ border-width: 1px;  border-color: white;
 
 .fav-btn {
     margin: 0px 0px 0px 0px;
-    border-width: 1px;  border-color: white;
+    border-width: 1px;  border: none;
+    background-color: rgb(255, 212, 23); /* Blue background */
+
   color: white; /* White text */
   font-size: 15px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
@@ -131,6 +139,7 @@ border-width: 1px;  border-color: white;
 
 .swiper-button-next, .swiper-button-prev {
     color: white!important;
+    margin: 10px;
    
     
     
@@ -163,4 +172,8 @@ border-width: 1px;  border-color: white;
 
 .overlay-card {
     margin: 10px 10px 10px 30px;
+}
+
+.overlay-content {
+margin: 5px;
 }

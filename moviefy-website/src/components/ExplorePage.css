@@ -58,7 +58,7 @@ body {
 }
 
 .watched-btn {
-    margin: 0px 10px 0px 10px;
+    margin: 0px 5px 0px 5px;
     background-color: DodgerBlue; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
@@ -73,7 +73,7 @@ body {
 }
 
 .towatch-btn {
-    margin: 0px 10px 0px 10px;
+    margin: 0px 6px 0px 6px;
     background-color: rgb(50, 214, 0); /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */

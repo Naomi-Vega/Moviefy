@@ -50,7 +50,7 @@ const MovieDetailPage = () => {
             </div>
         </div>
         <div>
-            <h1>{movie.title}</h1>
+            <div className="detail-title">{movie.title}</div>
             <div className="movie-detail-genre">
                 
                 {movie.genres.map((genre) => {

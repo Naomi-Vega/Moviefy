@@ -26,6 +26,7 @@ export const Navbar = (props) => {
                             </li>}
                         </ul>
                     </nav>
+                    <Link to="/">
                     {!contextData.user && <button className="sign-in" onClick={() => {
                         props.setShowSignIn(true)
                     }}>Sign in</button>}
@@ -34,6 +35,7 @@ export const Navbar = (props) => {
                     contextData.setUser(null)
                     navigate("/")
                     }}>Log Out</button>}
+                    </Link>
 
                 </div>
             </div>

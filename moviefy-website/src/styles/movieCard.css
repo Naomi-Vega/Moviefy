@@ -18,7 +18,8 @@
 }
 
 .movie-container {
-  width: 200px;
+  width: 185px;
+  height: 310px;
   margin: 0px 10px 10px 10px;
   background-color: rgba(0, 0, 0, 0.884);
 }
@@ -50,6 +51,9 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  font-size: 22px;
+  color: #c9c9c9;
+  padding-top: 30px;
 }
 
 .slider-image-container {
@@ -87,8 +91,7 @@
   margin: 0px 0px 0px 0px;
   background-color: DodgerBlue;
   /* Blue background */
-  border-width: 1px;
-  border-color: white;
+  border: none;
   color: white;
   /* White text */
   font-size: 15px;
@@ -106,9 +109,11 @@
 }
 
 .towatch-btn {
-  margin: 0px 9px 0px 9px;
+  margin: 0px 5px 0px 5px;
   border-width: 1px;
-  border-color: white;
+  border: none;
+  background-color: #32d600;
+  /* Blue background */
   color: white;
   /* White text */
   font-size: 15px;
@@ -128,7 +133,9 @@
 .fav-btn {
   margin: 0px 0px 0px 0px;
   border-width: 1px;
-  border-color: white;
+  border: none;
+  background-color: #ffd417;
+  /* Blue background */
   color: white;
   /* White text */
   font-size: 15px;
@@ -147,6 +154,7 @@
 
 .swiper-button-next, .swiper-button-prev {
   color: white !important;
+  margin: 10px;
 }
 
 .navigation {
@@ -168,5 +176,9 @@
 
 .overlay-card {
   margin: 10px 10px 10px 30px;
+}
+
+.overlay-content {
+  margin: 5px;
 }
 /*# sourceMappingURL=movieCard.css.map */

@@ -10,6 +10,10 @@ body {
     padding-bottom: 15px;
 }
 
+.no-account {
+    padding-top: 30px;
+}
+
 .fields {
     padding-left: 20px;
 }
@@ -26,20 +30,29 @@ body {
 
 
 .home-page-left {
-    padding: 4rem 0 0px 7rem;
+    margin-right: 50px;
+    padding: 9rem 0 0px 7rem;
     width: 80%;
     color: rgb(204, 204, 204);
 }
 
 h1 {
-    font-size: 1.7rem;
-    padding-bottom: 1.6rem;
+    font-size: 2.1rem;
+    padding-bottom: 1.3rem;
+    text-align: center;
 }
 
 .home-img {
+    
     width: 250px;
     margin: 20px 0px 0px 40px;
+    z-index: 1;
+    
+    
+    
 }
+
+
 
 .home-page-right {
     background-color: rgba(179, 179, 179, 0.89);
@@ -68,9 +81,29 @@ color: rgb(51, 51, 51);
     padding-bottom: 30px;
 }
 
+.register-link {
+    color: #6253e1;
+    cursor: pointer;
+
+}
+
 .signin-field {
     padding-bottom: 30px;
+    
 }
+
+
+
+.sign-in-section {
+    width: 350px;
+}
+
+.register-title {
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+
 
 .landing-container input {
     display: flex;
@@ -81,6 +114,11 @@ color: rgb(51, 51, 51);
     padding: 3px 0px 0px 20px;
     width: 200px;
     height: 30px;
+}
+
+.landing-container label {
+    padding-left: 12px;
+    padding-bottom: 3px;
 }
 
 h4 {
@@ -111,7 +149,7 @@ h4 {
     font-weight: 500;
     color: #fff;
     cursor: pointer;
-    margin: 10px 0px 5px 0px;
+    margin: 5px 0px 5px 0px;
     
     height: 29px;
     text-align:center;

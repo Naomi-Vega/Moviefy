@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 
 import "../components/LandingPage.css"
-import home from "./images/home-img.jpg"
+import home from "./images/avatar.png"
 import axios from "axios"
 import { useState } from "react"
 import { useAppContext } from "../AppContext";
@@ -28,13 +28,15 @@ function LandingPage() {
             <Navbar setShowSignIn = {setShowSignIn}/>
             <div className="landing-container">
                 <div className="home-page-left">
-                    <h1>Welcome to Moviefy</h1>
-                    <h2>Your favorite movie tracker</h2>
-                    <img className="home-img" src={home} alt="Home" />
+                    <h1>Track films you've watched.</h1>
+                    <h1>Follow those you want to see.</h1>
+                    <h1>Save and review your favourite films.</h1>
+                    
+               {/*     <img className="home-img" src={home} alt="Home" /> */}
                 </div>
                 <div className="home-page-right">
                     <div className="register">
-                        <p>Register to begin your Moviefy experience</p>
+                        <div className="register-title">Register to begin your Moviefy experience</div>
                     </div>
 
 
@@ -102,20 +104,24 @@ function LandingPage() {
                     contextData.setUser(res.data.user)
                     navigate("/explore")
                 }}>
+
+
                     <div className="signin-field">
                     <label for="email"><FaUserAlt /> Email</label>
-                    <input type="email" placeholder="Enter email" value={email} onChange={(e) => {
+                    <input type="email" placeholder="" value={email} onChange={(e) => {
                             setEmail(e.target.value)
                         }}/>
                         </div>
                         <div className="signin-field">
                     <label for="password"><FaLock /> Password</label>
-                    <input type="password" placeholder="Enter Password" value={password} onChange={(e) => {
+                    <input type="password" placeholder="" value={password} onChange={(e) => {
                             setPassword(e.target.value)
                         }}/>
                         </div>
                     <button className="submit" type="submit">Submit</button>
-                    <p>Don't have an account? <span onClick={() => setShowSignIn(false)}>Register here</span></p>
+                    <div className="no-account">
+                    <p>Don't have an account? <span className="register-link" onClick={() => setShowSignIn(false)}>Register here</span></p>
+                    </div>
                 </form>}
                 </div>
 

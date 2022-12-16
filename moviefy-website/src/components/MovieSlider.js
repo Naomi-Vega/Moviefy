@@ -19,7 +19,7 @@ const MovieSlider = (props) => {
             navigation
             speed={600}
             loop 
-            spaceBetween={10}
+            spaceBetween={34}
             slidesPerView={5}
         >
             {props.movies.map((movie, index) => (
@@ -29,7 +29,7 @@ const MovieSlider = (props) => {
                             <img src={"https://image.tmdb.org/t/p/w185" + movie.poster_path} alt="movie"></img>
                             <div className='movie-overlay'>
                                 <div className='overlay-content'>
-                            <h1 className='card-title'>{movie.title}</h1>
+                            <div className='card-title'>{movie.title}</div>
                                 <div className='details'>
                                 <button onClick={()=> {
                                     navigate(`/movie/${movie.id}`)
