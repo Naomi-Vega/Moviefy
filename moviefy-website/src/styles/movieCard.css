@@ -18,6 +18,7 @@
 
 .movie-container {
   width: 200px;
+  margin: 0px 10px 10px 10px;
   background-color: rgba(241, 241, 241, 0.884);
 }
 
@@ -64,6 +65,7 @@
 
 .explore-area h1 {
   color: white;
+  margin-left: 30px;
   font-size: 25px;
 }
 
